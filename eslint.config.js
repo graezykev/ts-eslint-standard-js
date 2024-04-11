@@ -19,6 +19,6 @@ let a
 export default [
   { files: ['**/*.js'], languageOptions: { sourceType: 'script' } },
   { languageOptions: { globals: globals.browser } },
-  ...compat.extends('love'),
-  ...tseslint.configs.recommended
+  ...tseslint.configs.recommended,
+  ...compat.extends('love')
 ]
