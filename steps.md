@@ -114,13 +114,13 @@ pnpm eslint
 ```json
 {
   "scripts": {
-    "lint-fix": "eslint --fix ."
+    "format": "eslint --fix ."
   }
 }
 ```
 
 ```sh
-pnpm lint-fix
+pnpm format
 ```
 
 ## VS Code editor setting
@@ -142,9 +142,11 @@ mkdir .vscode && touch .vscode/settings.json
 
 # VS Code ESLint extension
 
+search `dbaeumer.vscode-eslint` on the Extensions pannel
+
 show error on editing
 
-format on save
+## Auto format on save
 
 ```json
 {
