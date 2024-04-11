@@ -142,11 +142,13 @@ mkdir .vscode && touch .vscode/settings.json
 
 # VS Code ESLint extension
 
-search `dbaeumer.vscode-eslint` on the Extensions pannel
+search and install `dbaeumer.vscode-eslint` on the Extensions pannel
 
 show error on editing
 
 ## Auto format on save
+
+`.vscode/settings.json`:
 
 ```json
 {
