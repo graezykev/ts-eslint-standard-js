@@ -17,8 +17,15 @@ const compat = new FlatCompat({
 let a
 
 export default [
-  { files: ['**/*.js'], languageOptions: { sourceType: 'script' } },
+  { files: ['**/*.{js,ts,jsx,tsx}'], languageOptions: { sourceType: 'script' } },
   { languageOptions: { globals: globals.browser } },
+  ...compat.extends('plugin:react/recommended'),
+  ...compat.extends('plugin:react-hooks/recommended'),
   ...tseslint.configs.recommended,
-  ...compat.extends('love')
+  ...compat.extends('love'),
+  {
+    rules: {
+      'react/destructuring-assignment': ['warn', 'always']
+    }
+  }
 ]

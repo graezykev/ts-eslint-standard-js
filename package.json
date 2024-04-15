@@ -16,14 +16,22 @@
     "node": ">=18.18.0 <19 || >=20.9.0 <21 || >=21.1.0"
   },
   "devDependencies": {
+    "@types/react": "^18.2.78",
+    "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^7.0.1",
     "eslint": "^8.0.1",
     "eslint-config-love": "^47.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "globals": "^15.0.0",
     "typescript": "*",
     "typescript-eslint": "^7.6.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
