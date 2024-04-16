@@ -138,7 +138,7 @@ edit `package.json`
 ```diff
 {
   "scripts": {
-+    "format": "eslint --fix ."
++ "format": "eslint --fix ."
 ```
 
 now try to format it
