@@ -70,7 +70,7 @@ export default [
 npx eslint eslint.config.js
 ```
 
-![alt text](image-8.png)
+![alt text](images/image-8.png)
 
 ## Try to lint a `.ts` file
 
@@ -89,7 +89,7 @@ npx eslint index.ts
 
 that also works.
 
-![alt text](image-9.png)
+![alt text](images/image-9.png)
 
 ## Configure linting commands
 
@@ -120,7 +120,7 @@ pnpm lint
 
 all problems in your js & ts files will be shown.
 
-![alt text](image-10.png)
+![alt text](images/image-10.png)
 
 ## Configure formatting commands
 
@@ -142,7 +142,7 @@ pnpm format
 
 since some problems have been fixed, only those what can't be fixed will show
 
-![alt text](image-11.png)
+![alt text](images/image-11.png)
 
 > Once again, formatting codes using ESLint is self-asserting
 
@@ -233,7 +233,7 @@ const MyComponent = (props) => {
 
 There is some error in the editor.
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 That's because JSX syntax is not allowed yet in Typescript configuration, edit `tsconfig.json`:
 
@@ -252,7 +252,7 @@ npx eslint react-code-1.tsx
 
 you'll find 14 problems:
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 create `react-code-2.jsx` with the same code as `react-code-1.tsx`, and lint it:
 
@@ -262,7 +262,7 @@ npx eslint react-code-2.jsx
 
 you'll see some problems but not related to real code problems.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 that's because `.jsx` file is not specified in the ESLint configuration, let's configure it in `eslint.config.js`:
 
@@ -275,7 +275,7 @@ export default [
 
 lint it again and you'll get **14 errors** same as `react-code-1.tsx`.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 these errors as only JS problems not specific to best practise of React and React Hooks, we need to do more.
 
@@ -298,7 +298,7 @@ export default [
 
 now run `npx eslint react-code-1.tsx` you'll find 15 problems, in contrast with the previous 14 problems, because 1 more issue related to React which is stipulated in the plugin we just added, has been detected.
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 ## defined or edit your own rule(s)
 
@@ -323,7 +323,7 @@ run `npx eslint react-code-1.tsx`, you'll get 1 more problem which is define by 
 
 you can defined or modify any rule as much as you can to tailor your team's rules here.
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 ## config React Hooks ESLint plugin
 
@@ -349,7 +349,7 @@ const MyComponent = (props) => {
 
 now lint it, and you'll find some errors, but none are related to React Hooks.
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 so you need to edit the ESLint config with 1 more line:
 
@@ -361,7 +361,7 @@ so you need to edit the ESLint config with 1 more line:
 
 lint `react-code-1.tsx` again you'll get errors related to React Hooks.
 
-![alt text](image-7.png)
+![alt text](images/image-7.png)
 
 ## Conclusion
 
