@@ -193,7 +193,7 @@ edit `.vscode/settings.json` to make sure it works:
 }
 ```
 
-Reload your VS Code window, you'll see errors detected by ESLint showing on the editor while you are editing the code, with **wavy line** highlighting the errors.
+Reload your VS Code window, you'll see errors detected by ESLint showing on the editor while you are editing the code, with **wavy line** highlighting the errors, hovering on the wavy line will show the pop-up of the error details.
 
 ![alt text](images/image-00.png)
 
