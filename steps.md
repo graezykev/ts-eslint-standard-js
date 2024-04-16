@@ -10,7 +10,7 @@ echo 'node_modules' >> .gitignore
 ## Init Project
 
 ```sh
-pnpm init -y
+npm init -y
 ```
 
 ```sh
@@ -24,7 +24,7 @@ npm pkg set type="module"
 - Lintting configs & plugins in **Standard Style**
 
 ```sh
-pnpm add -D \
+npm install -D \
   typescript@\* \
   eslint@^8.0.1 \
   eslint-plugin-promise@^6.0.0 \
@@ -122,7 +122,7 @@ dist
 now try the script
 
 ```sh
-pnpm lint
+npm run lint
 ```
 
 all problems in your js & ts files will be shown.
@@ -144,7 +144,7 @@ edit `package.json`
 now try to format it
 
 ```sh
-pnpm format
+npm run format
 ```
 
 since some problems have been fixed, only those what can't be fixed will show
@@ -175,7 +175,7 @@ edit `.vscode/settings.json`:
 
 ## VS Code ESLint extension
 
-use `pnpm lint` and `pnpm format` to check and format your code can be very laborious job, you can do them by integrating with ESLint VS Code extension.
+Using `npm run lint` and `npm run format` to check and format your code can be a very laborious job, but you can do it by integrating with ESLint VS Code extension.
 
 search `dbaeumer.vscode-eslint` on the Extensions pannel and install it.
 
@@ -223,11 +223,11 @@ the semicolon will disappear after you press `command + s` to save.
 ## Linting React and React Hooks
 
 ```sh
-pnpm add react react-dom
+npm install react react-dom
 ```
 
 ```sh
-pnpm add @types/react @types/react-dom
+npm install -D @types/react @types/react-dom
 ```
 
 create `react-code-1.tsx`:
@@ -303,7 +303,7 @@ these errors as only JS problems not specific to best practise of React and Reac
 ## Install React & React Hooks ESLint plugins
 
 ```sh
-pnpm add -D eslint-plugin-react eslint-plugin-react-hooks
+npm install -D eslint-plugin-react eslint-plugin-react-hooks
 ```
 
 ## config React ESLint plugin
