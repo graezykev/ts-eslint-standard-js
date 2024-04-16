@@ -1,6 +1,13 @@
 # Steps
 
-## Init project
+## Init Git
+
+```sh
+git init && \
+echo 'node_modules' >> .gitignore
+```
+
+## Init Project
 
 ```sh
 pnpm init -y
@@ -10,7 +17,7 @@ pnpm init -y
 npm pkg set type="module"
 ```
 
-## Install dependencies
+## Install Dependencies
 
 - TypeScript
 - ESLint
@@ -172,32 +179,46 @@ use `pnpm lint` and `pnpm format` to check and format your code can be very labo
 
 search `dbaeumer.vscode-eslint` on the Extensions pannel and install it.
 
-you'll see error shown on editor
+> At the time I write this, I'm using the v3.0.5 (pre-release) of this extension. Other versions may have some unknown issues.
+
+edit `.vscode/settings.json` to make sure it works:
+
+```diff
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+- "editor.detectIndentation": false
++ "editor.detectIndentation": false,
++ "eslint.enable": true
+}
+```
+
+Reload your VS Code window, you'll see errors detected by ESLint showing on the editor while you are editing the code, with **wavy line** highlighting the errors.
+
+![alt text](images/image-00.png)
+
+![alt text](images/image-01.png)
 
 ## Auto format on save
+
+this extension can also fix your code linting issues automatically.
 
 edit `.vscode/settings.json`:
 
 ```diff
-+  "eslint.enable": true,
+- "eslint.enable": true
++ "eslint.enable": true,
 +  "eslint.format.enable": true,
 +  "editor.formatOnSave": true,
 +  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
 }
 ```
 
-Now every time you edit your file, and pres `command + s` to save it, those problems can be automatically fixed will be fixed.
+Now every time you edit your code, and pres `command + s` to save it, those problems can be automatically fixed will be fixed.
 
-## Git ignored files
+![alt text](images/image-02.png)
 
-```sh
-touch .gitignore
-```
-
-```txt
-node_modules
-dist
-```
+the semicolon will disappear after you press `command + s` to save.
 
 ## Linting React and React Hooks
 
