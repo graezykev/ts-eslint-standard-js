@@ -6,6 +6,10 @@
 pnpm init -y
 ```
 
+```sh
+npm pkg set type="module"
+```
+
 ## Install dependencies
 
 - TypeScript
@@ -28,7 +32,7 @@ pnpm add -D \
 ## Init TypeScript
 
 ```sh
-pnpm exec tsc --init
+npx tsc --init
 ```
 
 ## Create ESLint configuration file
@@ -60,15 +64,17 @@ export default [
 ] 
 ```
 
-## Try lintting js file
+## Try to lint js file
 
 ```sh
-pnpm exec eslint eslint.config.js
+npx eslint eslint.config.js
 ```
 
-## Try lintting ts file
+![alt text](image-8.png)
 
-`index.ts`:
+## Try to lint a `.ts` file
+
+create a `index.ts`:
 
 ```js
 const x = {
@@ -78,22 +84,25 @@ const x = {
 ```
 
 ```sh
-pnpm exec eslint index.ts
+npx eslint index.ts
 ```
 
-## Configure lintting commands
+that also works.
 
-`package.json`
+![alt text](image-9.png)
 
-```json
+## Configure linting commands
+
+edit `package.json`
+
+```diff
 {
   "scripts": {
-    "lint": "eslint ."
-  }
-}
+    "test": "echo \"Error: no test specified\" && exit 1",
++   "lint": "eslint ."
 ```
 
-`.eslintignore`
+don't forget to exclude some files that should not be lint, create a `.eslintignore`:
 
 ```txt
 node_modules
@@ -103,34 +112,51 @@ public
 dist
 ```
 
+now try the script
+
 ```sh
-pnpm eslint
+pnpm lint
 ```
+
+all problems in your js & ts files will be shown.
+
+![alt text](image-10.png)
 
 ## Configure formatting commands
 
-`package.json`
+there are some problems can be fixed by the command `eslint --fix`
 
-```json
+edit `package.json`
+
+```diff
 {
   "scripts": {
-    "format": "eslint --fix ."
-  }
-}
++    "format": "eslint --fix ."
 ```
+
+now try to format it
 
 ```sh
 pnpm format
 ```
 
+since some problems have been fixed, only those what can't be fixed will show
+
+![alt text](image-11.png)
+
+> Once again, formatting codes using ESLint is self-asserting
+
 ## VS Code editor setting
 
+Configure your VS Code editor, to auto insert 2 spaces after you click the `Tab` key, instead of inserting a real `Tab`, following the rule define by [Standard JS](https://standardjs.com/rules)
+
+create the configure file
 
 ```sh
 mkdir .vscode && touch .vscode/settings.json
 ```
 
-`.vscode/settings.json`:
+edit `.vscode/settings.json`:
 
 ```json
 {
@@ -140,11 +166,13 @@ mkdir .vscode && touch .vscode/settings.json
 }
 ```
 
-# VS Code ESLint extension
+## VS Code ESLint extension
 
-search and install `dbaeumer.vscode-eslint` on the Extensions pannel
+use `pnpm lint` and `pnpm format` to check and format your code can be very laborious job, you can do them by integrating with ESLint VS Code extension.
 
-show error on editing
+search `dbaeumer.vscode-eslint` on the Extensions pannel and install it.
+
+you'll see error shown on editor
 
 ## Auto format on save
 
