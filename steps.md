@@ -175,9 +175,11 @@ edit `.vscode/settings.json`:
 
 ## VS Code ESLint extension
 
-Using `npm run lint` and `npm run format` to check and format your code can be a very laborious job, but you can do it by integrating with ESLint VS Code extension.
+Using `npm run lint` and `npm run format` to check and format your code can be a very laborious job, you need to edit the code in editor and run the check and format commands in the terminal, you may be facing huge amount of errors at the time you run `npm run lint`.
 
-search `dbaeumer.vscode-eslint` on the Extensions pannel and install it.
+A way of easing the anxiousness is by integrating with ESLint VS Code extension, to check and format the code problems along with your coding.
+
+Now search `dbaeumer.vscode-eslint` on the Extensions pannel and install it.
 
 > At the time I write this, I'm using the v3.0.5 (pre-release) of this extension. Other versions may have some unknown issues.
 
