@@ -148,7 +148,7 @@ since some problems have been fixed, only those what can't be fixed will show
 
 ## VS Code editor setting
 
-Configure your VS Code editor, to auto insert 2 spaces after you click the `Tab` key, instead of inserting a real `Tab`, following the rule define by [Standard JS](https://standardjs.com/rules)
+Configure your VS Code editor, to auto insert 2 spaces after you click the `Tab` key, instead of inserting a real `Tab`, following the rule defined by [Standard JS](https://standardjs.com/rules)
 
 create the configure file
 
@@ -176,16 +176,17 @@ you'll see error shown on editor
 
 ## Auto format on save
 
-`.vscode/settings.json`:
+edit `.vscode/settings.json`:
 
-```json
-{
-  "eslint.enable": true,
-  "eslint.format.enable": true,
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+```diff
++  "eslint.enable": true,
++  "eslint.format.enable": true,
++  "editor.formatOnSave": true,
++  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
 }
 ```
+
+Now every time you edit your file, and pres `command + s` to save it, those problems can be automatically fixed will be fixed.
 
 ## Git ignored files
 
