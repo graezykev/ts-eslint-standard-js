@@ -370,9 +370,11 @@ Now you have a somewhat robust toolchain of linting and formatting your code.
 Your Codes of:
 
 **TypeScript and JavaScript**
+
 **React and React Hooks**
 
 will all be ensured by:
 
 **Checking and Formatting CLI scripts**
+
 **Checking and Formatting editor tools**
