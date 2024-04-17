@@ -28,7 +28,6 @@ This post can be mainly devided into 5 parts.
 4. [Automate Linting and Formatting](#4-automate-linting-and-formatting)
 5. [Linting React & React Hooks](#5-linting-react--react-hooks)
 
-
 ## 1. Initial Setup
 
 If you're not setting up in a new TypeScript project, you can skip this part 1.
@@ -73,8 +72,6 @@ npx tsc --init
 ```
 
 A `tsconfig.json` will be created under your project.
-
-<div id="part2"></div>
 
 ## 2. ESLint Configuration
 
