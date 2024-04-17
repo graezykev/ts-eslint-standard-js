@@ -24,7 +24,7 @@ This post can be mainly devided into 5 parts.
 
 1. [Initial Setup](#part1)
 2. [ESLint Configuration](#part2)
-3. [Editor Integration](#part3)
+3. [Editor (VS Code) Integration](#part3)
 4. [Automate Linting and Formatting](#part4)
 5. [Linting React & React Hooks](#part5)
 
