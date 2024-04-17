@@ -2,7 +2,7 @@
 
 ## 1. Initial Jobs
 
-If you're not setting in a new TypeScript project, you can skip this part 1.
+If you're not setting up in a new TypeScript project, you can skip this part 1.
 
 ### Init Git
 
@@ -15,7 +15,7 @@ echo 'node_modules' >> .gitignore
 
 ### Init Project
 
-Initialize your packages.
+Initialize your npm package.
 
 ```sh
 npm init -y
@@ -29,7 +29,7 @@ npm pkg set type="module"
 
 ### Install TypeScript
 
-Run this in the terminal to install TypeScript.
+Run this in your terminal to install TypeScript.
 
 ```sh
 npm install -D typescript
@@ -37,7 +37,7 @@ npm install -D typescript
 
 ### Init TypeScript
 
-Use the following command to initialize a new TypeScript.
+Use the following command to initialize a new TypeScript project.
 
 ```sh
 npx tsc --init
@@ -49,7 +49,7 @@ A `tsconfig.json` will be created under your project.
 
 ### Install ESLint
 
-Run this in the terminal to install ESLint packages.
+Run the command below to install ESLint packages.
 
 ```sh
 npm install -D \
@@ -93,13 +93,20 @@ export default [
   { files: ['**/*.js'], languageOptions: { sourceType: 'script' } },
   { languageOptions: { globals: globals.browser } },
   ...tseslint.configs.recommended,
-  ...compat.extends('love'),
+  ...compat.extends('love')
 ]
 ```
 
 I use `import` and `export` here because in Part 1 I set the package type to `module` to enable ES6 modules, if your project is not, you may name this file as `eslint.config.mjs`, or modify the `import` and `export` syntax to a `CommonJS` way.
 
-> TODO
+Only the 2 lines you need to notice.
+
+```js
+  ...tseslint.configs.recommended,
+  ...compat.extends('love')
+```
+
+The first one is to help ESLint to parse and check TypeScript syntax, and the second one is to force the JavaScript and TypeScript code to follow [Standard JS rules](https://standardjs.com/rules).
 
 ### Try Out
 
@@ -143,17 +150,19 @@ npx eslint --fix index.ts
 # npx eslint --fix .
 ```
 
-Some problems will be fixed, like, the `"` has been changed to `'`, etc.
+Some problems will be fixed, like, the `"` will be changed to `'`, the `;` in the end of a line will be eliminated, etc.
 
 ![alt text](images/image-03.png)
 
-Of course, there are some problems that won't be automatically fixed, such as the used variables, usually ESLint won't fix them for you, you have to modify them yourself.
+Of course, there are some problems that won't be automatically fixed, such as the **used variables**, usually ESLint won't fix them for you, you need to modify them yourself.
 
 ## 3. Automatic Commands
 
+This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
+
 ### Linting Command
 
-edit `package.json`
+Edit your `package.json`.
 
 ```diff
 {
@@ -162,7 +171,7 @@ edit `package.json`
 +   "lint": "eslint ."
 ```
 
-Don't forget to exclude some files that should not be lint, create a `.eslintignore`:
+Don't forget to exclude some files that should not be lint, create a `.eslintignore` and put the contents inside.
 
 ```txt
 node_modules
@@ -172,21 +181,21 @@ public
 dist
 ```
 
-now try the script
+Now try the script
 
 ```sh
 npm run lint
 ```
 
-all problems in your js & ts files will be shown.
+All problems in your js & ts files will be shown.
 
 ![alt text](images/image-10.png)
 
 ### Formatting Command
 
-There are some problems that can be fixed by the command `eslint --fix`
+As I mentioned above, there are some problems that can be fixed by the command `eslint --fix`, we can leverage it as a way to batch format your code.
 
-edit `package.json`
+Edit `package.json`.
 
 ```diff
 {
@@ -194,7 +203,7 @@ edit `package.json`
 + "format": "eslint --fix ."
 ```
 
-now try to format it
+Try to format it.
 
 ```sh
 npm run format
@@ -234,7 +243,7 @@ Edit `.vscode/settings.json` to enable the ESLint extension in your editor.
 }
 ```
 
-Reloading of your VS Code window is required. You'll see errors detected by ESLint, showing on the editor while you are editing the code, being highlighted with **wavy lines**, hovering on each wavy line will toggle the pop-up of the error details.
+Reloading of your VS Code window is required. You'll see errors detected by the ESLint extension, showing on the editor while you are editing the code, being highlighted with **wavy lines**. Hovering of each wavy line will toggle the a pop-up of the error details.
 
 ![alt text](images/image-00.png)
 
@@ -242,7 +251,7 @@ Reloading of your VS Code window is required. You'll see errors detected by ESLi
 
 ### Auto Format on Save
 
-This extension can also fix your code linting issues automatically, looks like you are running `npx eslint` on the file you're editing.
+The ESLint extension can also fix your code linting issues automatically, looks like you are running `npx eslint` on the file while you're editing it.
 
 Modify `.vscode/settings.json` with 3 more configurations:
 
@@ -262,7 +271,12 @@ The semicolon(s) will disappear after you press `command + s` to save your code.
 
 ### Extra Tricks
 
-Configure your VS Code editor, to automatically insert 2 spaces after you click the `Tab` key, instead of inserting a real `Tab`, following the rule defined by [Standard JS](https://standardjs.com/rules).
+Different developers have their own default behaviour of the editor.
+For instance, in your VS Code, you press the `Tab` key may produce a real **tab** with a width of 4 spaces, while your teammates' may produce 2 spaces ...
+
+Under the rules of [Standard JS](https://standardjs.com/rules), the code indention of real **tab** is not allowed, instead, you need 2 space instead.
+
+To collaborate with your teammates better, I recommend you configure your VS Code editor to unify this behaviour. i.e., to automatically insert 2 spaces after you click the `Tab` key, instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
 
 To achieve this, edit `.vscode/settings.json` to add the following 3 configurations:
 
