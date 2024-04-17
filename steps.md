@@ -18,7 +18,17 @@ Standard JS is simple, straightforward, detailed, and I think following the rule
 
 If you agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your project, this post is for you, to guide you through the configuration.
 
-## 1. Initial Jobs
+## Key Takeaways
+
+This post can be mainly devided into 5 parts.
+
+- 1. Initial Setup
+- 2. ESLint Configuration
+- 3. Automate Linting and Formatting
+- 4. Editor Integration
+- 5. Linting React & React Hooks
+
+## 1. Initial Setup
 
 If you're not setting up in a new TypeScript project, you can skip this part 1.
 
@@ -63,7 +73,7 @@ npx tsc --init
 
 A `tsconfig.json` will be created under your project.
 
-## 2. ESLint Setting
+## 2. ESLint Configuration
 
 ### Install ESLint
 
@@ -174,7 +184,7 @@ Some problems will be fixed, like, the `"` will be changed to `'`, the `;` in th
 
 Of course, there are some problems that won't be automatically fixed, such as the **used variables**, usually ESLint won't fix them for you, you need to modify them yourself.
 
-## 3. Automatic Commands
+## 3. Automate Linting and Formatting
 
 This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
 
@@ -233,7 +243,7 @@ Since some problems have been fixed, only those that can't be fixed will show.
 
 > Once again, formatting codes using ESLint is self-asserting
 
-## 4. Editor Setting
+## 4. Editor (VS Code) Integration
 
 Using `npx eslint` and `npm run format` etc. to check and format every JS/TS file of your codebase can be a nightmare and sometimes uncontrollable.
 
