@@ -1,20 +1,22 @@
 # Steps
 
-Configuring ESLint in a TypeScript project is an easy thing, but choosing a Coding Styles for your team can be challenging.
+Configuring ESLint in a TypeScript project is an easy thing, but choosing a **Code Style** for your team can be challenging.
 
 You may be swaying between those famous Code Styles, struggling to choose one between [Airbnb JavaScript Style](https://github.com/airbnb/javascript), [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html), [JavaScript Standard Style](https://standardjs.com/rules), or [XO](https://github.com/xojs/xo) etc.
 
 What's worse, you and your teammates may being arguing whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }` ...
 
-In my personal perspective, it doesn't matter which style to choose, but we need a unified style across a team.
+In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team.
 
 I, selft assertingly, have chosen [JavaScript Standard Style](https://standardjs.com/rules), also called Standard JS, even though it is not at all a real standard (I admit the name is somewhat bad).
 
-Choose Standard JS is a subjective thing, there're some people who hate it, we're all right.
+Choosing [Standard JS](https://standardjs.com/rules) is a subjective thing, some people even hate it, but we're all right.
 
-It's simple, straightforward, detailed, and I think following the style guide makes my JS/TS code very clean. **It doesn't allow configuration**, rule is rule, so I don't need to argue with my teammates.
+Standard JS is simple, straightforward, detailed, and I think following the rules makes my JS/TS code very clean.
 
-If you agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your project, this post is for you.
+**It doesn't allow configurations**, rule is rule, so I don't need to argue with my teammates.
+
+If you agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your project, this post is for you, to guide you through the configuration.
 
 ## 1. Initial Jobs
 
