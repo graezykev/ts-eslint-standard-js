@@ -192,11 +192,13 @@ Of course, there are some problems that won't be automatically fixed, such as th
 
 ## 3. Editor (VS Code) Integration
 
-Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file of your codebase can be a nightmare, they are laborious, and sometimes uncontrollable.
+Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file in your codebase can be a nightmare, this is laborious, and sometimes uncontrollable.
 
-You need to edit the code in the editor and run the commands in the terminal, you may be facing a huge amount of errors at the time you run `npx eslint`.
+Imagine you need to edit the code in the editor and run the commands in the terminal, you may be facing a huge amount of errors at the time you run `npx eslint`.
 
 A way of easing the anxiousness is by integrating with **ESLint VS Code Extension**, to check and format the code problems along with your coding. i.e., make a mistake, be alerted by the editor immediately, and fix it right away.
+
+> You may be not using VS Code, but other editors like WebStorm has similar solutions.
 
 ### VS Code ESLint Extension
 
