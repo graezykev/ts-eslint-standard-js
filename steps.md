@@ -24,8 +24,8 @@ This post can be mainly devided into 5 parts.
 
 1. [Initial Setup](#part1)
 2. [ESLint Configuration](#part2)
-3. [Automate Linting and Formatting](#part3)
-4. [Editor Integration](#part4)
+3. [Editor Integration](#part3)
+4. [Automate Linting and Formatting](#part4)
 5. [Linting React & React Hooks](#part5)
 
 <div id="part1"></div>
@@ -190,72 +190,11 @@ Of course, there are some problems that won't be automatically fixed, such as th
 
 <div id="part3"></div>
 
-## 3. Automate Linting and Formatting
+## 3. Editor (VS Code) Integration
 
-This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
+Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file of your codebase can be a nightmare, they are laborious, and sometimes uncontrollable.
 
-### Linting Command
-
-Edit your `package.json`.
-
-```diff
-{
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-+   "lint": "eslint ."
-```
-
-Don't forget to exclude some files that should not be lint, create a `.eslintignore` and put the contents inside.
-
-```txt
-node_modules
-test
-coverage
-public
-dist
-```
-
-Now try the script
-
-```sh
-npm run lint
-```
-
-All problems in your js & ts files will be shown.
-
-![alt text](images/image-10.png)
-
-### Formatting Command
-
-As I mentioned above, there are some problems that can be fixed by the command `eslint --fix`, we can leverage it as a way to batch format your code.
-
-Edit `package.json`.
-
-```diff
-{
-  "scripts": {
-+ "format": "eslint --fix ."
-```
-
-Try to format it.
-
-```sh
-npm run format
-```
-
-Since some problems have been fixed, only those that can't be fixed will show.
-
-![alt text](images/image-11.png)
-
-> Once again, formatting codes using ESLint is self-asserting
-
-<div id="part4"></div>
-
-## 4. Editor (VS Code) Integration
-
-Using `npx eslint` and `npm run format` etc. to check and format every JS/TS file of your codebase can be a nightmare and sometimes uncontrollable.
-
-You need to edit the code in the editor and run the commands in the terminal, you may be facing a huge amount of errors at the time you run `npm run lint`.
+You need to edit the code in the editor and run the commands in the terminal, you may be facing a huge amount of errors at the time you run `npx eslint`.
 
 A way of easing the anxiousness is by integrating with **ESLint VS Code Extension**, to check and format the code problems along with your coding. i.e., make a mistake, be alerted by the editor immediately, and fix it right away.
 
@@ -323,6 +262,67 @@ To achieve this, edit `.vscode/settings.json` to add the following 3 configurati
 ```
 
 From now on no matter who opens your project in VS Code, his/her click of the `Tab` key will trigger an insert of 2 spaces, and a click of the `Backspace` key will trigger a deletion of a tab(2 spaces).
+
+<div id="part4"></div>
+
+## 4. Automate Linting and Formatting
+
+This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
+
+### Linting Command
+
+Edit your `package.json`.
+
+```diff
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
++   "lint": "eslint ."
+```
+
+Don't forget to exclude some files that should not be lint, create a `.eslintignore` and put the contents inside.
+
+```txt
+node_modules
+test
+coverage
+public
+dist
+```
+
+Now try the script
+
+```sh
+npm run lint
+```
+
+All problems in your js & ts files will be shown.
+
+![alt text](images/image-10.png)
+
+### Formatting Command
+
+As I mentioned above, there are some problems that can be fixed by the command `eslint --fix`, we can leverage it as a way to batch format your code.
+
+Edit `package.json`.
+
+```diff
+{
+  "scripts": {
++ "format": "eslint --fix ."
+```
+
+Try to format it.
+
+```sh
+npm run format
+```
+
+Since some problems have been fixed, only those that can't be fixed will show.
+
+![alt text](images/image-11.png)
+
+> Once again, formatting codes using ESLint is self-asserting
 
 <div id="part5"></div>
 
