@@ -1,4 +1,4 @@
-# Steps
+## Introduction
 
 Configuring ESLint in a TypeScript project is an easy thing, but choosing a **Code Style** for your team can be challenging.
 
