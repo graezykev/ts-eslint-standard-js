@@ -261,7 +261,7 @@ From now on no matter who opens your project in VS Code, his/her click of the `T
 
 ## 4. Automate Linting and Formatting
 
-This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
+This part we're going to add checking and formatting commands to your project's auto scripts, so that you can do some batched jobs, or run them in your **CI workflows**, etc.
 
 ### Linting Command
 
