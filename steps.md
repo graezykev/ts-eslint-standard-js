@@ -22,11 +22,13 @@ If you agree with me, or you have other reasons to choose [JavaScript Standard S
 
 This post can be mainly devided into 5 parts.
 
-1. Initial Setup
-2. ESLint Configuration
-3. Automate Linting and Formatting
-4. Editor Integration
-5. Linting React & React Hooks
+1. [Initial Setup](#part1)
+2. [ESLint Configuration](#part2)
+3. [Automate Linting and Formatting](#part3)
+4. [Editor Integration](#part4)
+5. [Linting React & React Hooks](#part5)
+
+<div id="part1"></div>
 
 ## 1. Initial Setup
 
@@ -72,6 +74,8 @@ npx tsc --init
 ```
 
 A `tsconfig.json` will be created under your project.
+
+<div id="part2"></div>
 
 ## 2. ESLint Configuration
 
@@ -184,6 +188,8 @@ Some problems will be fixed, like, the `"` will be changed to `'`, the `;` in th
 
 Of course, there are some problems that won't be automatically fixed, such as the **used variables**, usually ESLint won't fix them for you, you need to modify them yourself.
 
+<div id="part3"></div>
+
 ## 3. Automate Linting and Formatting
 
 This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
@@ -242,6 +248,8 @@ Since some problems have been fixed, only those that can't be fixed will show.
 ![alt text](images/image-11.png)
 
 > Once again, formatting codes using ESLint is self-asserting
+
+<div id="part4"></div>
 
 ## 4. Editor (VS Code) Integration
 
@@ -315,6 +323,8 @@ To achieve this, edit `.vscode/settings.json` to add the following 3 configurati
 ```
 
 From now on no matter who opens your project in VS Code, his/her click of the `Tab` key will trigger an insert of 2 spaces, and a click of the `Backspace` key will trigger a deletion of a tab(2 spaces).
+
+<div id="part5"></div>
 
 ## 5. Linting React & React Hooks
 
