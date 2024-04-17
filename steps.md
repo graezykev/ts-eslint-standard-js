@@ -440,7 +440,7 @@ lint `react-code-1.tsx` again you'll get errors related to React Hooks.
 
 ![alt text](images/image-7.png)
 
-### Conclusion
+## Conclusion
 
 Now you have a somewhat robust toolchain of linting and formatting your code.
 
