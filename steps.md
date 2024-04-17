@@ -22,11 +22,11 @@ If you agree with me, or you have other reasons to choose [JavaScript Standard S
 
 This post can be mainly devided into 5 parts.
 
-- 1. Initial Setup
-- 2. ESLint Configuration
-- 3. Automate Linting and Formatting
-- 4. Editor Integration
-- 5. Linting React & React Hooks
+1. Initial Setup
+2. ESLint Configuration
+3. Automate Linting and Formatting
+4. Editor Integration
+5. Linting React & React Hooks
 
 ## 1. Initial Setup
 
