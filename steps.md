@@ -22,13 +22,12 @@ If you agree with me, or you have other reasons to choose [JavaScript Standard S
 
 This post can be mainly devided into 5 parts.
 
-1. [Initial Setup](#part1)
-2. [ESLint Configuration](#part2)
-3. [Editor (VS Code) Integration](#part3)
-4. [Automate Linting and Formatting](#part4)
-5. [Linting React & React Hooks](#part5)
+1. [Initial Setup](#1-initial-setup)
+2. [ESLint Configuration](#2-eslint-configuration)
+3. [Editor (VS Code) Integration](#3-editor-vs-code-integration)
+4. [Automate Linting and Formatting](#4-automate-linting-and-formatting)
+5. [Linting React & React Hooks](#5-linting-react--react-hooks)
 
-<div id="part1"></div>
 
 ## 1. Initial Setup
 
@@ -188,8 +187,6 @@ Some problems will be fixed, like, the `"` will be changed to `'`, the `;` in th
 
 Of course, there are some problems that won't be automatically fixed, such as the **used variables**, usually ESLint won't fix them for you, you need to modify them yourself.
 
-<div id="part3"></div>
-
 ## 3. Editor (VS Code) Integration
 
 Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file in your codebase can be a nightmare, this is laborious, and sometimes uncontrollable.
@@ -265,8 +262,6 @@ To achieve this, edit `.vscode/settings.json` to add the following 3 configurati
 
 From now on no matter who opens your project in VS Code, his/her click of the `Tab` key will trigger an insert of 2 spaces, and a click of the `Backspace` key will trigger a deletion of a tab(2 spaces).
 
-<div id="part4"></div>
-
 ## 4. Automate Linting and Formatting
 
 This part we're going to add check and format commands to your project's auto scripts, so that you can do some batched jobs, or run them in your CI workflows, etc.
@@ -325,8 +320,6 @@ Since some problems have been fixed, only those that can't be fixed will show.
 ![alt text](images/image-11.png)
 
 > Once again, formatting codes using ESLint is self-asserting
-
-<div id="part5"></div>
 
 ## 5. Linting React & React Hooks
 
