@@ -530,6 +530,23 @@ Lint `react-code-1.tsx` again you'll get errors related to React Hooks.
 
 ![alt text](images/image-7.png)
 
+There's one more thing, you may have found the warning.
+
+![ff](images/image-001.png)
+
+Add the following configs to automatically detect the react version and eliminate the warning.
+
+```diff
+  ...compat.extends('love'),
+  {
++    settings: {
++      react: {
++        version: 'detect'
++      }
++    },
+    rules: {
+```
+
 ## Conclusion
 
 Now you have a somewhat robust toolchain of linting and formatting your code.
