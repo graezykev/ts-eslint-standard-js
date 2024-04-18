@@ -6,21 +6,25 @@ You may be swaying between those famous Code Styles, struggling to choose one be
 
 What's worse, you and your teammates may being arguing whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }` ...
 
-In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team.
+In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team. Once the rules are set, don't argue about them any more, as long as the rules are detailed.
 
-I, selft assertingly, have chosen [JavaScript Standard Style](https://standardjs.com/rules), also called Standard JS, even though it is not at all a real standard (I admit the name is somewhat bad).
+I, selft assertingly, have chosen [JavaScript Standard Style](https://standardjs.com/rules), also called Standard JS (even though it is not at all a standard, the name is somewhat bad).
 
-Choosing [Standard JS](https://standardjs.com/rules) is a subjective thing, some people even hate it, but we're all right.
+Standard JS is simple, straightforward, detailed, and I think following the rules makes my JS/TS code very **clean**.
 
-Standard JS is simple, straightforward, detailed, and I think following the rules makes my JS/TS code very clean.
+**It doesn't allow configurations**, **rules are rules**, so I don't need to argue with my teammates.
 
-**It doesn't allow configurations**, rule is rule, so I don't need to argue with my teammates.
+Standard JS is **opinionated**, and choosing Standard JS is a subjective thing, some people even hate it, but we're all right.
 
-If you agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your project, this post is for you, to guide you through the configuration.
+In this post, I also use ESLint + Standard JS as my **code formatting** tools. Formatting JS/TS code by using ESLint is also subjective and opinionated, arguably most people would rather use [Prettier](https://prettier.io/) instead.
+
+Prettier provides more configurable options, but like I said before, Standard JS's philosophy is "rules are rules", its rules are detailed, some arguable rules are strictly normalised and no compromises are allowed, customising Prettier's options will lead me back to endless arguements with my teammates.
+
+Sorry, I've gone too far, I'm not here to persuade you to use Standard JS. My intention is if you somehow agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your team, this post is for your infomation, to guide you through the configuration.
 
 ## Key Takeaways
 
-This post can be mainly devided into 5 parts.
+This post is mainly devided into 5 parts.
 
 1. [Initial Setup](#1-initial-setup)
 2. [ESLint Configuration](#2-eslint-configuration)
@@ -240,14 +244,17 @@ Now every time you type some code, and press `command + s` to save them, those p
 
 The semicolon(s) will disappear after you press `command + s` to save your code.
 
+If your teammates have the extension `dbaeumer.vscode-eslint` installed, same thing will happen on their VS Code.
+
 ### Extra Tricks
 
 Different developers have their own default behaviour of the editor.
-For instance, in your VS Code, you press the `Tab` key may produce a real **tab** with a width of 4 spaces, while your teammates' may produce 2 spaces ...
 
-Under the rules of [Standard JS](https://standardjs.com/rules), the code indention of real **tab** is not allowed, instead, you need 2 space instead.
+For instance, in your VS Code, you press the `Tab` key may produce a real **tab** with a width of 4 spaces, while your teammates' may produce 2 spaces or 4 spaces ...
 
-To collaborate with your teammates better, I recommend you configure your VS Code editor to unify this behaviour. i.e., to automatically insert 2 spaces after you click the `Tab` key, instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
+Under the rules of [Standard JS](https://standardjs.com/rules), the code indention of real **tab**s is not allowed, instead, you have to use 2 space.
+
+To collaborate with your teammates better, I recommend you configure the VS Code editor and share the configurations, to unify this behaviour. i.e., to automatically insert 2 spaces after a click of the `Tab` key, instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
 
 To achieve this, edit `.vscode/settings.json` to add the following 3 configurations:
 
@@ -261,7 +268,7 @@ From now on no matter who opens your project in VS Code, his/her click of the `T
 
 ## 4. Automate Linting and Formatting
 
-This part we're going to add checking and formatting commands to your project's auto scripts, so that you can do some batched jobs, or run them in your **CI workflows**, etc.
+This part we're going to add checking and formatting commands to your project's npm scripts, so that you can do some batched jobs, or run them in your **CI workflows**, **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)** etc.
 
 ### Linting Command
 
@@ -316,7 +323,17 @@ Since some problems have been fixed, only those that can't be fixed will show.
 
 ![alt text](images/image-11.png)
 
-> Once again, formatting codes using ESLint is self-asserting
+### Why do I need NPM scripts
+
+You must found that, the commands of `npm run lint` and `npm run format` have no difference to `npx eslint .` and `npx eslint --fix .` respectively.
+
+Well, when you directly run `npx eslint .`, it tries to run the ESLint tool directly from your project’s local dependencies (`eslint` under the `/node_modules/.bin/` of your project), but if ESLint is not installed under your project, `npx` will try to run the globally installed ESLint instead.
+
+However, the NPM script `"lint": "eslint ."` ensures you only run ESLint in your project, if it's not installed, will result in an error.
+
+By strictly defining the specific version (or version ranges) of ESLint in your `package.json`, you can avoid ESLint's version conflicts with the global ESLint.
+
+What's more, your `lint` script might include additional flags or options specific to your project, NPM scripts, with more semantic indicators, allow you to abstract away those complex commands or tool configurations.
 
 ## 5. Linting React & React Hooks
 
