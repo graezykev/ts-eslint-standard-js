@@ -141,6 +141,8 @@ const compat = new FlatCompat({
   recommendedConfig: pluginJs.configs.recommended
 })
 
+let a
+
 export default [
   { files: ['**/*.js'], languageOptions: { sourceType: 'script' } },
   { languageOptions: { globals: globals.browser } },
@@ -317,7 +319,7 @@ Now try the script
 npm run lint
 ```
 
-All problems in your js & ts files will be shown.
+All problems in your JS/TS files will be shown.
 
 ![alt text](images/image-10.png)
 
