@@ -24,6 +24,11 @@ export default [
   ...tseslint.configs.recommended,
   ...compat.extends('love'),
   {
+    settings: {
+      react: {
+        version: 'detect'
+      }
+    },
     rules: {
       'react/destructuring-assignment': ['warn', 'always']
     }
