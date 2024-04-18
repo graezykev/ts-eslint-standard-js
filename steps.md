@@ -376,7 +376,7 @@ npm install -D @types/react @types/react-dom
 Next, create a sample file `react-code-1.tsx` to write some React (JSX) code.
 
 ```js
-import React, { useContext } from "react";
+import React from "react";
 
 const SignupButton = () => {
   const handleSignup = () => {
@@ -512,7 +512,7 @@ const MyComponent = (props) => {
 };
 ```
 
-Now lint it, and you'll find some errors, but none are related to React Hooks.
+Now lint it, and you'll find some errors, but **none are related to React Hooks**.
 
 ![alt text](images/image-6.png)
 
