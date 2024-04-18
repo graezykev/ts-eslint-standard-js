@@ -1,4 +1,6 @@
-# # A Guide for Configuring TypeScript + ESLint to Adhere to Standard JS Style, integrating with VS Code Tips and Automatic Formatting, feat. React + React Hooks Plugins
+# # A Guide for Configuring ESLint in a TypeScript project, to Adhere to Standard JS Style, integrating with VS Code Tips and Automatic Formatting
+
+> Featuring ESLint Plugins of React + React Hooks
 
 **Use [JavaScript Standard Style](https://standardjs.com/) in ESLint, to lint & format TypeScript**
 
