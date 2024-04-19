@@ -1,7 +1,9 @@
-# Configure ESLint in a TypeScript project to adhere to JavaScript Standard Style
+# Configure ESLint in a TypeScript project to adhere to Standard JS
 
-**Including integration with VS Code tips and automatic formatting, and featuring ESLint plugins for React and React Hooks.**
+**Integrate [JavaScript Standard Style](https://standardjs.com/) in ESLint to lint and format TypeScript, primarily using [`eslint-config-love`](https://github.com/mightyiam/eslint-config-love).**
 
-Use [JavaScript Standard Style](https://standardjs.com/) in ESLint to lint & format TypeScript, primarily by integrating [eslint-config-love](https://github.com/mightyiam/eslint-config-love).
+**Enhance the setup with VS Code tips for automatic formatting.**
+
+**Include ESLint plugins for React and React Hooks**
 
 See the [Steps](./steps.md)
