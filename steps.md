@@ -4,17 +4,17 @@ Configuring ESLint in a TypeScript project is an easy thing, but choosing a **Co
 
 You may be swaying between those famous Code Styles, struggling to choose one between [Airbnb JavaScript Style](https://github.com/airbnb/javascript), [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html), [JavaScript Standard Style](https://standardjs.com/rules), or [XO](https://github.com/xojs/xo) etc.
 
-What's worse, you and your teammates may being arguing whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }` ...
+What's worse, you and your teammates may be arguing whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }` ...
 
 In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team. Once the rules are set, don't argue about them any more, as long as the rules are detailed.
 
-I, selft assertingly, have chosen [JavaScript Standard Style](https://standardjs.com/rules), also called Standard JS (even though it is not at all a standard, the name is somewhat bad).
+I, self-assertively, have chosen [JavaScript Standard Style](https://standardjs.com/rules), also called Standard JS (even though it is not at all standard, the name is somewhat bad).
 
-Standard JS is **simple, clear, straightforward, detailed**, and I think sticking to the rules makes JS/TS code very **clean**.
+Standard JS is **simple, clear, straightforward, and detailed**, and I think sticking to the rules makes JS/TS code very **clean**.
 
 **It doesn't allow configurations**, **rules are rules**. No configurations, which is by design to avoid too much bikeshedding over style choices, So I don't need to argue with my teammates.
 
-Exmaple
+Example
 
 ```js
 window.alert('hi')   // ✓ ok
@@ -38,13 +38,13 @@ I have to admit that Standard JS is **opinionated**, and choosing it is a subjec
 
 In this post, I also use ESLint + Standard JS as my **code formatting** tools. Formatting JS/TS code by using ESLint is also subjective and opinionated, arguably most people would rather use [Prettier](https://prettier.io/) instead.
 
-Prettier provides more configurable options, but like I said before, Standard JS's philosophy is "rules are rules", its rules are detailed, some arguable rules are strictly normalised and no compromises are allowed, customising Prettier's options will lead me back to endless arguements with my teammates.
+Prettier provides more configurable options, but like I said before, Standard JS's philosophy is "rules are rules", its rules are detailed, some arguable rules are strictly normalised and no compromises are allowed, customising Prettier's options will lead me back to endless arguments with my teammates.
 
-Sorry, I've gone too far, I'm not here to persuade you to use Standard JS. My intention is if you somehow agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your team, this post is for your infomation, to guide you through the configuration.
+Sorry, I've gone too far, I'm not here to persuade you to use Standard JS. My intention is if you somehow agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your team, this post is for your information, to guide you through the configuration.
 
 ## Key Takeaways
 
-This post is mainly devided into 5 parts.
+This post is mainly divided into 5 parts.
 
 1. [Initial Setup](#1-initial-setup)
 2. [ESLint Configuration](#2-eslint-configuration)
@@ -54,7 +54,7 @@ This post is mainly devided into 5 parts.
 
 ## 1. Initial Setup
 
-If you're not setting up in a new TypeScript project, you can skip this part 1.
+If you're not setting up a new TypeScript project, you can skip this part 1.
 
 ### Init Git
 
@@ -208,17 +208,17 @@ Some problems will be fixed, like, the `"` will be changed to `'`, the `;` in th
 
 ![alt text](images/image-03.png)
 
-Of course, there are some problems that won't be automatically fixed, such as the **used variables**, usually ESLint won't fix them for you, you need to modify them yourself.
+Of course, some problems won't be automatically fixed, such as the **used variables**, usually, ESLint won't fix them for you, and you need to modify them yourself.
 
 ## 3. Editor (VS Code) Integration
 
-Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file in your codebase can be a nightmare, this is laborious, and sometimes uncontrollable.
+Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file in your codebase can be a nightmare, this is laborious and sometimes uncontrollable.
 
 Imagine you need to edit the code in the editor and run the commands in the terminal, you may be facing a huge amount of errors at the time you run `npx eslint`.
 
 A way of easing the anxiousness is by integrating with **ESLint VS Code Extension**, to check and format the code problems along with your coding. i.e., make a mistake, be alerted by the editor immediately, and fix it right away.
 
-> You may be not using VS Code, but other editors like WebStorm has similar solutions.
+> You may be not using VS Code, but other editors like WebStorm have similar solutions.
 
 ### VS Code ESLint Extension
 
@@ -240,7 +240,7 @@ Edit `.vscode/settings.json` to enable the ESLint extension in your editor.
 }
 ```
 
-Reloading of your VS Code window is required. You'll see errors detected by the ESLint extension, showing on the editor while you are editing the code, being highlighted with **wavy lines**. Hovering of each wavy line will toggle the a pop-up of the error details.
+Reloading of your VS Code window is required. You'll see errors detected by the ESLint extension, showing on the editor while you are editing the code, being highlighted with **wavy lines**. Hovering each wavy line will toggle the pop-up of the error details.
 
 ![alt text](images/image-00.png)
 
@@ -266,7 +266,7 @@ Now every time you type some code, and press `command + s` to save them, those p
 
 The semicolon(s) will disappear after you press `command + s` to save your code.
 
-If your teammates have the extension `dbaeumer.vscode-eslint` installed, same thing will happen on their VS Code.
+If your teammates have the extension `dbaeumer.vscode-eslint` installed, the same thing will happen on their VS Code.
 
 ### Extra Tricks
 
@@ -274,7 +274,7 @@ Different developers have their own default behaviour of the editor.
 
 For instance, in your VS Code, you press the `Tab` key may produce a real **tab** with a width of 4 spaces, while your teammates' may produce 2 spaces or 4 spaces ...
 
-Under the rules of [Standard JS](https://standardjs.com/rules), the code indention of real **tab**s is not allowed, instead, you have to use 2 space.
+Under the rules of [Standard JS](https://standardjs.com/rules), the code indention of real **tab**s is not allowed, instead, you have to use 2 spaces.
 
 To collaborate with your teammates better, I recommend you configure the VS Code editor and share the configurations, to unify this behaviour. i.e., to automatically insert 2 spaces after a click of the `Tab` key, instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
 
@@ -290,7 +290,7 @@ From now on no matter who opens your project in VS Code, his/her click of the `T
 
 ## 4. Automate Linting and Formatting
 
-This part we're going to add checking and formatting commands to your project's npm scripts, so that you can do some batched jobs, or run them in your **CI workflows**, **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)** etc.
+In this part, we're going to add checking and formatting commands to your project's npm scripts, so that you can do some batched jobs, or run them in your **CI workflows**, **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)** etc.
 
 ### Linting Command
 
@@ -325,7 +325,7 @@ All problems in your JS/TS files will be shown.
 
 ### Formatting Command
 
-As I mentioned above, there are some problems that can be fixed by the command `eslint --fix`, we can leverage it as a way to batch format your code.
+As I mentioned above, some problems can be fixed by the command `eslint --fix`, we can leverage it as a way to batch format your code.
 
 Edit `package.json`.
 
@@ -347,7 +347,7 @@ Since some problems have been fixed, only those that can't be fixed will show.
 
 ### Why do I need NPM scripts
 
-You must found that, the commands of `npm run lint` and `npm run format` have no difference to `npx eslint .` and `npx eslint --fix .` respectively.
+You must find that the commands of `npm run lint` and `npm run format` have no difference from `npx eslint .` and `npx eslint --fix .` respectively.
 
 Well, when you directly run `npx eslint .`, it tries to run the ESLint tool directly from your project’s local dependencies (`eslint` under the `/node_modules/.bin/` of your project), but if ESLint is not installed under your project, `npx` will try to run the globally installed ESLint instead.
 
@@ -377,7 +377,7 @@ npm install -D @types/react @types/react-dom
 
 ### Let TypeScript to Recognize JSX
 
-Before we continue, let's disable the editor's auto-save first in `.vscode/settings.json`, for better demonstrating how the following linting configurations work.
+Before we continue, let's disable the editor's auto-save first in `.vscode/settings.json`, to better demonstrate how the following linting configurations work.
 
 ```diff
 -"editor.formatOnSave": true,
@@ -437,7 +437,7 @@ Create `react-code-2.jsx` with the same code as `react-code-1.tsx`, and lint it:
 npx eslint react-code-2.jsx
 ```
 
-You may see some problems but not they are not real code style problems.
+You may see some problems but they are not real code style problems.
 
 ![alt text](images/image-2.png)
 
@@ -523,7 +523,7 @@ const MyComponent = (props) => {
 };
 ```
 
-Now lint it, and you'll find some errors, but **none are related to React Hooks**.
+Now lint it and you'll find some errors, but **none are related to React Hooks**.
 
 ![alt text](images/image-6.png)
 
@@ -574,6 +574,6 @@ will all be ensured through:
 
 And we also have a way to **self-customize** the rules of React and React Hooks, or extend your own rules.
 
-Next step, you may need to integrate your Linting scripts with your Git Hooks or CI/CD flows. For Git Hooks, I have another post elaborating the steps, check it out if you want.
+Next step, you may need to integrate your Linting scripts with your Git Hooks or CI/CD flows. For Git Hooks, I have another post elaborating on the steps, check it out if you want.
 
 [How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)
