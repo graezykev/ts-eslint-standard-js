@@ -357,6 +357,8 @@ By strictly defining the specific version (or version ranges) of ESLint in your 
 
 What's more, your `lint` script might include additional flags or options specific to your project, NPM scripts, with more semantic indicators, allow you to abstract away those complex commands or tool configurations.
 
+I have another post on [How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md), leveraging the NPM scripts, check it out for more imaginations can happen.
+
 ## 5. Linting React & React Hooks
 
 JavaScript Standard Style is Less opinionated about JSX formatting and largely leaves JSX as-is. In a React project, you should integrate with React-specific linting rules for ESLint. The generally accepted configures are [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks), enforcing some best practices of writing React code.
@@ -574,4 +576,4 @@ And we also have a way to **self-customize** the rules of React and React Hooks,
 
 Next step, you may need to integrate your Linting scripts with your Git Hooks or CI/CD flows. For Git Hooks, I have another post elaborating the steps, check it out if you want.
 
-[A Guide on How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)
+[How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)
