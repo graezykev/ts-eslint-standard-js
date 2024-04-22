@@ -42,6 +42,10 @@ Prettier provides more configurable options, but like I said before, Standard JS
 
 Sorry, I've gone too far, I'm not here to persuade you to use Standard JS. My intention is if you somehow agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your team, this post is for your information, to guide you through the configuration.
 
+### GitHub Repo
+
+If you prefer to run the demo I've written rather than following the steps one by one, check out this [GitHub repository](https://github.com/graezykev/ts-eslint-standard-js) to get a quick overview.
+
 ## Key Takeaways
 
 This post is mainly divided into 5 parts.
@@ -560,17 +564,7 @@ Add the following configs to automatically detect the react version and eliminat
 
 Now you have a somewhat robust toolchain of linting and formatting your code.
 
-Your Codes of:
-
-**TypeScript and JavaScript**
-
-**React and React Hooks**
-
-will all be ensured through:
-
-**Checking and Formatting CLI scripts**
-
-**Checking and Formatting editor tools**
+Your Codes of **TypeScript and JavaScript**, writing features using **React and React Hooks**, will all be ensured through **Checking and Formatting CLI scripts** and **Checking and Formatting editor tools**.
 
 And we also have a way to **self-customize** the rules of React and React Hooks, or extend your own rules.
 
