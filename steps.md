@@ -553,7 +553,7 @@ Lint `react-code-1.tsx` again you'll get errors related to React Hooks.
 
 There's one more thing, you may have found the warning.
 
-![ff](images/image-001.png)
+![alt text](images/image-001.png)
 
 Add the following configs to automatically detect the react version and eliminate the warning.
 
