@@ -52,7 +52,7 @@ Sorry, I've gone too far, I'm not here to persuade you to use Standard JS. My in
 
 ### GitHub Repo
 
-If you prefer to run the demo I've written rather than following the steps one by one, check out this [GitHub repository](https://github.com/graezykev/ts-eslint-standard-js) to get a quick overview.
+If you'd prefer to run the demo I've created instead of following the steps individually, check out this [GitHub repository](https://github.com/graezykev/ts-eslint-standard-js/tree/main) for a quick overview and hands-on experience.
 
 ## Key Takeaways
 
@@ -579,3 +579,5 @@ And we also have a way to **self-customize** the rules of React and React Hooks,
 Next step, you may need to integrate your Linting scripts with your Git Hooks or CI/CD flows. For Git Hooks, I have another post elaborating on the steps, check it out if you want.
 
 [How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)
+
+**Last but not least, any suggestions, corrections, questions, or disagreements will be greatly appreciated.**
