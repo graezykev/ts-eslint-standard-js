@@ -8,21 +8,21 @@
 
 ## Introduction
 
-Configuring ESLint in a TypeScript project is an easy thing, but choosing a **Code Style** for your team can be challenging.
+Configuring ESLint in a TypeScript project is nothing much, the more challenging aspect is choosing a **Code Style** for your team.
 
-You may be swaying between those famous Code Styles, struggling to choose one between [Airbnb JavaScript Style](https://github.com/airbnb/javascript), [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html), [JavaScript Standard Style](https://standardjs.com/rules), or [XO](https://github.com/xojs/xo) etc.
+You may be torn between those famous code styles, struggling to choose one between [Airbnb JavaScript Style](https://github.com/airbnb/javascript), [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html), [JavaScript Standard Style](https://standardjs.com/rules), or [XO](https://github.com/xojs/xo), among others.
 
-What's worse, you and your teammates may be arguing whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }` ...
+What's worse, you and your teammates may be arguing about whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }`, and so on.
 
-In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team. Once the rules are set, don't argue about them any more, as long as the rules are detailed.
+In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team. Once the rules are set, don't argue about them anymore, as long as the rules are detailed.
 
-I, self-assertively, have chosen [JavaScript Standard Style](https://standardjs.com/rules), also called Standard JS (even though it is not at all standard, the name is somewhat bad).
+So, self-assertively, I have chosen [JavaScript Standard Style](https://standardjs.com/rules), also known as Standard JS, even though it is not at all standard—the name is somewhat misleading.
 
 Standard JS is **simple, clear, straightforward, and detailed**, and I think sticking to the rules makes JS/TS code very **clean**.
 
 **It doesn't allow configurations**, **rules are rules**. No configurations, which is by design to avoid too much bikeshedding over style choices, So I don't need to argue with my teammates.
 
-Example
+Examples.
 
 ```js
 window.alert('hi')   // ✓ ok
@@ -42,13 +42,13 @@ console.log(`hello there`)    // ✗ avoid
 
 ...
 
-I have to admit that Standard JS is **opinionated**, and choosing it is a subjective thing. Some people even hate it, but we're all right.
+I have to admit that Standard JS is **opinionated**, and choosing it is a subjective thing. Some people even hate it—we're all right.
 
-In this post, I also use ESLint + Standard JS as my **code formatting** tools. Formatting JS/TS code by using ESLint is also subjective and opinionated, arguably most people would rather use [Prettier](https://prettier.io/) instead.
+In this post, I also use ESLint + Standard JS as my **code formatting** tools. Formatting JS/TS code by using ESLint is also subjective and opinionated, arguably most people would rather use [Prettier](https://prettier.io/) instead, which provides more configurable options.
 
-Prettier provides more configurable options, but like I said before, Standard JS's philosophy is "rules are rules", its rules are detailed, some arguable rules are strictly normalised and no compromises are allowed, customising Prettier's options will lead me back to endless arguments with my teammates.
+But like I said before, Standard JS's philosophy is "rules are rules", its rules are detailed, some arguable rules are strictly normalised and no compromises are allowed, customising Prettier's options will lead me back to endless arguments with my teammates.
 
-Sorry, I've gone too far, I'm not here to persuade you to use Standard JS. My intention is if you somehow agree with me, or you have other reasons to choose [JavaScript Standard Style](https://standardjs.com/) in your team, this post is for your information, to guide you through the configuration.
+Sorry, I've gone too far. I'm not here to persuade you to use Standard JS. My intention is to provide information and guidance on configuring [JavaScript Standard Style](https://standardjs.com/) for your team, should you agree with me or have other reasons to choose it.
 
 ### GitHub Repo
 
@@ -56,7 +56,7 @@ If you'd prefer to run the demo I've created instead of following the steps indi
 
 ## Key Takeaways
 
-This post is mainly divided into 5 parts.
+I primarily divide this post into 5 parts.
 
 1. [Initial Setup](#1-initial-setup)
 2. [ESLint Configuration](#2-eslint-configuration)
@@ -85,7 +85,7 @@ Initialize your npm package.
 npm init -y
 ```
 
-I recommend you enable ES6 modules in your project, which indicates that your source code should use **import** syntax.
+I recommend enabling ES6 modules in your project, indicating that your source code should use **import** syntax.
 
 ```sh
 npm pkg set type="module"
@@ -113,7 +113,7 @@ A `tsconfig.json` will be created under your project.
 
 ### Install ESLint
 
-Run the command below to install ESLint packages.
+Run the command below to install **ESLint** packages.
 
 ```sh
 npm install -D \
@@ -130,13 +130,15 @@ npm install -D \
 The packages installed include:
 
 - ESLint Core
-- ESLint shared configs & plugins of **Standard JS**, the most important one is `eslint-config-love`
+- ESLint shared configs and plugins for **Standard JS**, with the most important one being `eslint-config-love`.
 
 ### ESLint configuration
 
-Create a file(.js) named `eslint.config.js` with the code below:
+Create a file named `eslint.config.js` with the code below:
 
 ```js
+// eslint.config.js
+
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
@@ -163,24 +165,26 @@ export default [
 ]
 ```
 
-I use `import` and `export` here because in Part 1 I set the package type to `module` to enable ES6 modules, if your project is not, you may name this file as `eslint.config.mjs`, or modify the `import` and `export` syntax to a `CommonJS` way.
+I use `import` and `export` here because in Part 1 I set the package type to `module` to enable ES6 modules. If your project does not use ES6 modules, you may name this file as `eslint.config.mjs` or modify the `import` and `export` syntax to use `CommonJS`.
 
-Only the 2 lines you need to notice.
+There are only 2 lines you need to notice now.
 
 ```js
   ...tseslint.configs.recommended,
   ...compat.extends('love')
 ```
 
-The first one is to help ESLint to parse and check TypeScript syntax, and the second one is to force the JavaScript and TypeScript code to follow [Standard JS rules](https://standardjs.com/rules).
+The first line instructs ESLint to parse and check TypeScript syntax, while the second line enforces adherence to [Standard JS rules](https://standardjs.com/rules) for both JavaScript and TypeScript code.
 
 ### Try Out
 
-Run this to check the configuration file itself.
+Run this command to verify the configuration file itself:
 
 ```sh
 npx eslint eslint.config.js
 ```
+
+Yes, there are indeed some errors in the configuration file.
 
 ![ts eslint standard js](images/image-8.png)
 
@@ -195,42 +199,42 @@ const x = {
 };
 ```
 
-And check its style.
+And check its code style:
 
 ```sh
 npx eslint index.ts
 ```
 
-That also works!
+Showing the errors means the configurations also work for TS!
 
 ![ts eslint standard js](images/image-9.png)
 
-Besides, you can use `npx eslint .` to check all your files' styles with one command.
+Besides, you can use `npx eslint .` to check the style of all your files with one command.
 
 ### Fix Code Style Issues
 
-You can also use ESLint to automatically fix some illegal syntax and styles of your code.
+You can use the `--fix` flag in ESLint to automatically correct some of the illegal syntax and style issues in your code.
 
 ```sh
 npx eslint --fix index.ts
 # npx eslint --fix .
 ```
 
-Some problems will be fixed, like, the `"` will be changed to `'`, the `;` in the end of a line will be eliminated, etc.
+Some issues will be automatically fixed, such as changing `"` to `'`, removing unnecessary semicolons at the end of lines, and so on.
 
 ![ts eslint standard js](images/image-03.png)
 
-Of course, some problems won't be automatically fixed, such as the **used variables**, usually, ESLint won't fix them for you, and you need to modify them yourself.
+Certainly, not all issues will be automatically resolved. For instance, ESLint typically won't fix **unused variables**; you'll need to address those manually.
 
 ## 3. Editor (VS Code) Integration
 
-Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file in your codebase can be a nightmare, this is laborious and sometimes uncontrollable.
+Using `npx eslint .` and `npx eslint --fix .` to check and format every JS/TS file in your codebase can be a nightmare, which is laborious and sometimes uncontrollable.
 
 Imagine you need to edit the code in the editor and run the commands in the terminal, you may be facing a huge amount of errors at the time you run `npx eslint`.
 
-A way of easing the anxiousness is by integrating with **ESLint VS Code Extension**, to check and format the code problems along with your coding. i.e., make a mistake, be alerted by the editor immediately, and fix it right away.
+A way to ease the anxiety is by integrating with the **ESLint VS Code Extension**. It checks and formats the code problems along with your coding. For example, if you make a mistake, you'll be alerted by the editor immediately and can fix it right away.
 
-> You may be not using VS Code, but other editors like WebStorm have similar solutions.
+> You may not be using VS Code, but other editors like WebStorm offer similar solutions.
 
 ### VS Code ESLint Extension
 
