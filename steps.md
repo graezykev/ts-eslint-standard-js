@@ -238,14 +238,15 @@ A way to ease the anxiety is by integrating with the **ESLint VS Code Extension*
 
 ### VS Code ESLint Extension
 
-Now search `dbaeumer.vscode-eslint` on the Extensions pannel and install it.
+Search for `dbaeumer.vscode-eslint` in the Extensions panel and install it.
 
-> At the time I write this, I'm using the v3.0.5 (pre-release) of this extension. Other versions may have some unknown issues.
+> At the time I write this, I'm using version 3.0.5 (pre-release) of this extension. Other versions may have some unknown issues.
 
-First, create the configure file.
+First, create the configuration file.
 
 ```sh
-mkdir .vscode && touch .vscode/settings.json
+mkdir .vscode && \
+touch .vscode/settings.json
 ```
 
 Edit `.vscode/settings.json` to enable the ESLint extension in your editor.
@@ -256,57 +257,61 @@ Edit `.vscode/settings.json` to enable the ESLint extension in your editor.
 }
 ```
 
-Reloading of your VS Code window is required. You'll see errors detected by the ESLint extension, showing on the editor while you are editing the code, being highlighted with **wavy lines**. Hovering each wavy line will toggle the pop-up of the error details.
+Reloading your VS Code window is required. You'll see errors detected by the ESLint extension showing up in the editor while you are editing the code. These errors will be highlighted with **wavy lines**.
 
 ![ts eslint standard js](images/image-00.png)
+
+Hovering over each wavy line will toggle a pop-up displaying the error details.
 
 ![ts eslint standard js](images/image-01.png)
 
 ### Auto Format on Save
 
-The ESLint extension can also fix your code linting issues automatically, looks like you are running `npx eslint` on the file while you're editing it.
+This VS Code ESLint extension can also automatically fix your code's linting issues. It operates similarly to running `npx eslint` on the file while you're editing it.
 
-Modify `.vscode/settings.json` with 3 more configurations:
+Modify `.vscode/settings.json` with three additional configurations:
 
 ```diff
 - "eslint.enable": true
 + "eslint.enable": true,
-+  "eslint.format.enable": true,
-+  "editor.formatOnSave": true,
-+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
++ "eslint.format.enable": true,
++ "editor.formatOnSave": true,
++ "editor.defaultFormatter": "dbaeumer.vscode-eslint"
 ```
 
-Now every time you type some code, and press `command + s` to save them, those problems in the file can be automatically fixed will be automatically fixed.
+Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically.
 
 ![ts eslint standard js](images/image-02.png)
 
-The semicolon(s) will disappear after you press `command + s` to save your code.
+The semicolons will disappear after you press `Command + S` to save your code.
 
-If your teammates have the extension `dbaeumer.vscode-eslint` installed, the same thing will happen on their VS Code.
+By sharing this `settings.json` in Git or any other version control tools, if your teammates have the extension `dbaeumer.vscode-eslint` installed, the same behavior will occur in their VS Code.
+
+> You can even share the installation of `dbaeumer.vscode-eslint` via `devcontainer.json`, but that's a larger topic, and I won't elaborate on it here.
 
 ### Extra Tricks
 
-Different developers have their own default behaviour of the editor.
+Different developers have their own default editor behaviors.
 
-For instance, in your VS Code, you press the `Tab` key may produce a real **tab** with a width of 4 spaces, while your teammates' may produce 2 spaces or 4 spaces ...
+For instance, in your VS Code, pressing the `Tab` key may produce a tab with a width of 4 spaces, while for your teammates, it may produce 2 spaces or 4 spaces, depending on their default settings.
 
-Under the rules of [Standard JS](https://standardjs.com/rules), the code indention of real **tab**s is not allowed, instead, you have to use 2 spaces.
+Under the rules of [Standard JS](https://standardjs.com/rules), the use of real **tabs** for code indentation is not allowed; instead, you have to use 2 spaces.
 
-To collaborate with your teammates better, I recommend you configure the VS Code editor and share the configurations, to unify this behaviour. i.e., to automatically insert 2 spaces after a click of the `Tab` key, instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
+To collaborate better with your teammates or enforce the rules of our code style more strictly, I recommend configuring the VS Code editor and sharing the configurations to unify this behavior. For example, you can set it to automatically insert 2 spaces after pressing the `Tab` key instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
 
-To achieve this, edit `.vscode/settings.json` to add the following 3 configurations:
+To achieve this, add the following three configurations to `.vscode/settings.json`:
 
 ```diff
-+  "editor.tabSize": 2,
-+  "editor.insertSpaces": true,
-+  "editor.detectIndentation": false
++ "editor.tabSize": 2,
++ "editor.insertSpaces": true,
++ "editor.detectIndentation": false
 ```
 
-From now on no matter who opens your project in VS Code, his/her click of the `Tab` key will trigger an insert of 2 spaces, and a click of the `Backspace` key will trigger a deletion of a tab(2 spaces).
+From now on, whenever someone opens your project in VS Code, pressing the `Tab` key will insert 2 spaces, and pressing the `Backspace` key will delete 2 spaces.
 
 ## 4. Automate Linting and Formatting
 
-In this part, we're going to add checking and formatting commands to your project's npm scripts, so that you can do some batched jobs, or run them in your **CI workflows**, **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)** etc.
+In this section, we'll integrate checking and formatting commands into your project's NPM scripts. This enables you to execute batched tasks or run them in your **CI workflows** and **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)**.
 
 ### Linting Command
 
@@ -319,7 +324,7 @@ Edit your `package.json`.
 +   "lint": "eslint ."
 ```
 
-Don't forget to exclude some files that should not be lint, create a `.eslintignore` and put the contents inside.
+Don't forget to exclude some files that should not be linted. Create a `.eslintignore` file and add the necessary exclusions to it.
 
 ```txt
 node_modules
@@ -329,35 +334,35 @@ public
 dist
 ```
 
-Now try the script
+Now try the script:
 
 ```sh
 npm run lint
 ```
 
-All problems in your JS/TS files will be shown.
+All ESLint problems in your JavaScript/TypeScript files will be displayed.
 
 ![ts eslint standard js](images/image-10.png)
 
 ### Formatting Command
 
-As I mentioned above, some problems can be fixed by the command `eslint --fix`, we can leverage it as a way to batch format your code.
+As mentioned above, some problems can be fixed by the command `eslint --fix`. So We can leverage this command as a way to batch format your code.
 
-Edit `package.json`.
+Edit `package.json`:
 
 ```diff
 {
   "scripts": {
-+ "format": "eslint --fix ."
++   "format": "eslint --fix .",
 ```
 
-Try to format it.
+And try formatting it:
 
 ```sh
 npm run format
 ```
 
-Since some problems have been fixed, only those that can't be fixed will show.
+Since some problems have been fixed, only those that can't be fixed will be displayed.
 
 ![ts eslint standard js](images/image-11.png)
 
@@ -365,7 +370,7 @@ Since some problems have been fixed, only those that can't be fixed will show.
 
 You must find that the commands of `npm run lint` and `npm run format` have no difference from `npx eslint .` and `npx eslint --fix .` respectively.
 
-Well, when you directly run `npx eslint .`, it tries to run the ESLint tool directly from your project’s local dependencies (`eslint` under the `/node_modules/.bin/` of your project), but if ESLint is not installed under your project, `npx` will try to run the globally installed ESLint instead.
+Well, when you run `npx eslint .` directly, it attempts to execute the ESLint tool from your project’s local dependencies (ESLint under the `/node_modules/.bin/` directory of your project). However, if ESLint is not installed within your project, `npx` will attempt to run the globally installed ESLint instead.
 
 However, the NPM script `"lint": "eslint ."` ensures you only run ESLint in your project, if it's not installed, will result in an error.
 
