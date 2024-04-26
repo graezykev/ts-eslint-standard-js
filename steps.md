@@ -372,17 +372,17 @@ You must find that the commands of `npm run lint` and `npm run format` have no d
 
 Well, when you run `npx eslint .` directly, it attempts to execute the ESLint tool from your project’s local dependencies (ESLint under the `/node_modules/.bin/` directory of your project). However, if ESLint is not installed within your project, `npx` will attempt to run the globally installed ESLint instead.
 
-However, the NPM script `"lint": "eslint ."` ensures you only run ESLint in your project, if it's not installed, will result in an error.
+However, the NPM script `"lint": "eslint ."` ensures that ESLint is only executed within your project. If ESLint is not installed, running this script will result in an error.
 
-By strictly defining the specific version (or version ranges) of ESLint in your `package.json`, you can avoid ESLint's version conflicts with the global ESLint.
+By strictly defining the specific version (or version ranges) of ESLint in your `package.json`, you can avoid conflicts between ESLint versions installed globally and those required for your project.
 
-What's more, your `lint` script might include additional flags or options specific to your project, NPM scripts, with more semantic indicators, allow you to abstract away those complex commands or tool configurations.
+What's more, your `lint` script might include additional flags or options specific to your project. NPM scripts, with more semantic indicators, allow you to abstract away those complex commands or tool configurations.
 
-I have another post on [How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md), leveraging the NPM scripts, check it out for more imaginations can happen.
+I have another post on [How to Normalize Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md), leveraging the NPM scripts. Check it out for more ideas that can enhance your workflow.
 
 ## 5. Linting React & React Hooks
 
-JavaScript Standard Style is Less opinionated about JSX formatting and largely leaves JSX as-is. In a React project, you should integrate with React-specific linting rules for ESLint. The generally accepted configures are [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks), enforcing some best practices of writing React code.
+JavaScript Standard Style is less opinionated about JSX formatting and largely leaves JSX as-is. In a React project, you should integrate with React-specific linting rules for ESLint. The generally accepted configurations are [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and [eslint-plugin-react-hooks](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks), enforcing some best practices of writing React code.
 
 ### Dependencies
 
@@ -398,16 +398,18 @@ npm install -D @types/react @types/react-dom
 
 ### Let TypeScript to Recognize JSX
 
-Before we continue, let's disable the editor's auto-save first in `.vscode/settings.json`, to better demonstrate how the following linting configurations work.
+Before we proceed, let's disable the editor's auto-save first in `.vscode/settings.json` to better demonstrate how the following linting configurations work.
 
 ```diff
 -"editor.formatOnSave": true,
 +"editor.formatOnSave": false,
 ```
 
-Next, create a sample file `react-code-1.tsx` to write some React (JSX) code.
+Next, let's create a sample file `react-code-1.tsx` to write some React (JSX) code.
 
 ```js
+// react-code-1.tsx
+
 import React from "react";
 
 const SignupButton = () => {
@@ -427,11 +429,13 @@ const MyComponent = (props) => {
 };
 ```
 
-There is some error in the editor.
+There are some errors visible in the editor.
 
 ![ts eslint standard js](images/image.png)
 
-That's because `JSX` syntax is not allowed yet in TypeScript configuration, edit `tsconfig.json`:
+That's because JSX syntax is not allowed yet in TypeScript configuration.
+
+Edit `tsconfig.json` to enable it:
 
 ```diff
 -    // "jsx": "preserve",                                /* Specify what JSX code is generated. */
@@ -440,29 +444,29 @@ That's because `JSX` syntax is not allowed yet in TypeScript configuration, edit
 
 Then the error above will disappear.
 
-Now lint the `.tsx` file.
+Next, lint the `.tsx` file:
 
 ```sh
 npx eslint react-code-1.tsx
 ```
 
-You'll find 14 problems:
+You'll find 14 problems, indicating that ESLint is enabled for `.tsx` files.
 
 ![ts eslint standard js](images/image-1.png)
 
 ### Ask ESLint to Recognize `.jsx`
 
-Create `react-code-2.jsx` with the same code as `react-code-1.tsx`, and lint it:
+Create a `react-code-2.jsx` file with the same code as `react-code-1.tsx`, and lint it.
 
 ```sh
 npx eslint react-code-2.jsx
 ```
 
-You may see some problems but they are not real code style problems.
+You may see some problems, but they are not actual code style issues.
 
 ![ts eslint standard js](images/image-2.png)
 
-That's because `.jsx` file is not specified in the ESLint configuration, let's configure it in `eslint.config.js`:
+That's because the `.jsx` file extension is not specified in the ESLint configuration. Let's configure it in `eslint.config.js`:
 
 ```diff
 export default [
@@ -470,11 +474,11 @@ export default [
 +  { files: ['**/*.{js,ts,jsx,tsx}'], languageOptions: { sourceType: 'script' } },
 ```
 
-Lint it again and you'll get **14 errors** same as `react-code-1.tsx`.
+Lint it again, and you'll get **14 errors**, the same as `react-code-1.tsx`.
 
 ![ts eslint standard js](images/image-3.png)
 
-These errors are code style problems, however still not React-specific problems, we need to do more.
+These errors in `react-code-1.tsx` and `react-code-2.jsx` are code style problems, however, they are still not React-specific problems. We need to do more.
 
 ### Install React & React Hooks ESLint plugins
 
@@ -484,7 +488,7 @@ npm install -D eslint-plugin-react eslint-plugin-react-hooks
 
 ### Configure React ESLint Plugin
 
-First, config `eslint-plugin-react` in `eslint.config.js` with just a new line.
+First, configure `eslint-plugin-react` in `eslint.config.js` with just a new line.
 
 ```diff
 export default [
@@ -493,13 +497,13 @@ export default [
 +  ...compat.extends('plugin:react/recommended'),
 ```
 
-Now run `npx eslint react-code-1.tsx` you'll find **15 problems**, in contrast with the previous 14 problems, because 1 more issue related to React which is stipulated in the plugin `eslint-plugin-react`, has been detected.
+Now, when you run `npx eslint react-code-1.tsx`, you'll find **15 problems**. This is one more issue compared to the previous **14 problems**, because an additional problem related to React, specified in the plugin `eslint-plugin-react`, has been detected.
 
 ![ts eslint standard js](images/image-4.png)
 
 ### Self-Customize your Own Rule(s)
 
-Ok let's take one further step, edit `eslint.config.js` to extend your self-customed rule:
+Ok, let's take one further step and edit `eslint.config.js` to extend your custom rule:
 
 ```diff
 export default [
@@ -516,17 +520,17 @@ export default [
 ]
 ```
 
-Run `npx eslint react-code-1.tsx`, you'll get 1 more problem which is defined by you.
+Run `npx eslint react-code-1.tsx`, and you'll notice one additional problem defined by you.
 
 ![ts eslint standard js](images/image-5.png)
 
-You can define or modify any rules as much as you can to tailor your team's rules here.
+You can define or modify any rules as much as you like to tailor your team's rules here.
 
 ### Configure React Hooks ESLint Plugin
 
-Let's now integrate the best practice rules of React Hooks.
+Let's now integrate the best practice rules for React Hooks.
 
-Edit `react-code-1.tsx` to write some React Hooks code.
+Edit `react-code-1.tsx` to include some React Hooks code.
 
 ```diff
 -import React from "react";
@@ -544,11 +548,11 @@ const MyComponent = (props) => {
 };
 ```
 
-Now lint it and you'll find some errors, but **none are related to React Hooks**.
+Now lint it, and you'll find some errors, but **none of them are related to React Hooks**.
 
 ![ts eslint standard js](images/image-6.png)
 
-You only need to edit the ESLint config with 1 more line.
+You just need to edit the ESLint configuration with one additional line.
 
 ```diff
   ...compat.extends('plugin:react/recommended'),
@@ -556,15 +560,15 @@ You only need to edit the ESLint config with 1 more line.
   ...tseslint.configs.recommended,
 ```
 
-Lint `react-code-1.tsx` again you'll get errors related to React Hooks.
+Lint `react-code-1.tsx` again, and you'll get errors related to React Hooks.
 
 ![ts eslint standard js](images/image-7.png)
 
-There's one more thing, you may have found the warning.
+There's one more thing you may have noticed: the warning.
 
 ![ts eslint standard js](images/image-001.png)
 
-Add the following configs to automatically detect the react version and eliminate the warning.
+Add the following configurations to automatically detect the React version and eliminate the warning.
 
 ```diff
   ...compat.extends('love'),
@@ -579,13 +583,15 @@ Add the following configs to automatically detect the react version and eliminat
 
 ## Conclusion
 
-Now you have a somewhat robust toolchain of linting and formatting your code.
+Now you have a somewhat robust toolchain for linting and formatting your code.
 
 Your Codes of **TypeScript and JavaScript**, writing features using **React and React Hooks**, will all be ensured through **Checking and Formatting CLI scripts** and **Checking and Formatting editor tools**.
 
-And we also have a way to **self-customize** the rules of React and React Hooks, or extend your own rules.
+The **TypeScript and JavaScript** code, including features developed with **React and React Hooks**, will be **validated and formatted** using **CLI scripts and editor tools**.
 
-Next step, you may need to integrate your Linting scripts with your Git Hooks or CI/CD flows. For Git Hooks, I have another post elaborating on the steps, check it out if you want.
+We also provide a method to **customize** the rules for React and React Hooks or to extend them with your own rules.
+
+Next, you may want to integrate your linting scripts with your Git Hooks or CI/CD workflows. For Git Hooks, I have another post that elaborates on the steps. Check it out if you're interested.
 
 [How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)
 
