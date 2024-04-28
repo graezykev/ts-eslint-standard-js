@@ -312,7 +312,7 @@ VS Code prompts your teammates to install `dbaeumer.vscode-eslint` when the proj
 
 ### devcontainer
 
-If your team is using a **Cloud Development Environment** such as [GitHub Codespaces](https://github.com/codespaces), you can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`.
+If your team is using a **Cloud Development Environment** such as [GitHub Codespaces](https://github.com/codespaces), or [Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers) such as Docker, you can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`.
 
 When someone opens the project in VS Code, the specified extension (as well as the specific version) `dbaeumer.vscode-eslint@3.0.5` will be automatically installed within the devcontainer.
 
@@ -334,8 +334,6 @@ echo '{
   }
 }' > .devcontainer/devcontainer.json
 ```
-
-Find out more about **Developing inside a Container** [here](https://code.visualstudio.com/docs/devcontainers/containers).
 
 ### Extra Tricks
 
