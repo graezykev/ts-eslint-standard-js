@@ -416,8 +416,6 @@ Before we proceed, let's disable the editor's auto-save first in `.vscode/settin
 Next, let's create a sample file `react-code-1.tsx` to write some React (JSX) code.
 
 ```js
-// react-code-1.tsx
-
 import React from "react";
 
 const SignupButton = () => {
