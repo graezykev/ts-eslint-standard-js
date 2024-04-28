@@ -135,7 +135,7 @@ npm install -D \
   globals@^15.0.0
 ```
 
-> These versions can be changed in the future.
+> Note: These versions can be changed in the future.
 
 The packages installed include:
 
