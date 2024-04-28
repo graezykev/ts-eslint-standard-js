@@ -147,8 +147,6 @@ The packages installed include:
 Create a file named `eslint.config.js` with the code below:
 
 ```js
-// eslint.config.js
-
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
 
