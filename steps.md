@@ -295,9 +295,22 @@ The semicolons will disappear after you press `Command + S` to save your code.
 
 By sharing this `settings.json` in Git or any other version control tools, if your teammates have the extension `dbaeumer.vscode-eslint` installed, the same behavior will occur in their VS Code.
 
+### Recommend Installing the Extension
+
+You can recommend your teammates to install `dbaeumer.vscode-eslint` via the following configure.
+
+```sh
+touch .vscode/extensions.json && \
+echo '{   
+  "recommendations": ["dbaeumer.vscode-eslint"]
+}' > .vscode/extensions.json
+```
+
+VS Code prompts your teammates to install `dbaeumer.vscode-eslint` when the project is opened for the first time.
+
 ### devcontainer
 
-You can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`, but that's a larger topic, and I won't elaborate on it here, you can just give it a try.
+If your team is using a **Cloud Development Environment** such as [GitHub Codespaces](https://github.com/codespaces), you can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`, I love this, but it's a larger topic, and I won't elaborate too much on it here, you can just give it a try.
 
 ```sh
 mkdir .devcontainer && \
@@ -313,6 +326,8 @@ echo '{
   }
 }' > .devcontainer/devcontainer.json
 ```
+
+Find out more about **Developing inside a Container** [here](https://code.visualstudio.com/docs/devcontainers/containers).
 
 ### Extra Tricks
 
