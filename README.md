@@ -20,4 +20,4 @@ npm run lint
 
 ## Try It in Codespaces
 
-![alt text](image.png)
+![alt text](images/image-0.png)
