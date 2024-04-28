@@ -451,14 +451,22 @@ npm install react react-dom
 npm install -D @types/react @types/react-dom
 ```
 
-### Let TypeScript to Recognize JSX
+### Disable VS Code Extension (temporary)
 
-Before we proceed, let's disable the editor's auto-save first in `.vscode/settings.json` to better demonstrate how the following linting configurations work. (But **this is only an intermediate step; don't forget to undo the change in the end**.)
+In the next steps, I'm going to create some code, but I don't want them to be auto-fixed by ESLint.
+
+So, before we proceed, let's disable the ESLint VS Code Extension and the editor's auto-save in `.vscode/settings.json` to better demonstrate how the following linting configurations work. (But **this is only an intermediate step; don't forget to undo the change in the end**.)
 
 ```diff
--"editor.formatOnSave": true,
-+"editor.formatOnSave": false,
+-  "eslint.enable": true,
+-  "eslint.format.enable": true,
+-  "editor.formatOnSave": true,
++  "eslint.enable": false,
++  "eslint.format.enable": false,
++  "editor.formatOnSave": false,
 ```
+
+### Let TypeScript to Recognize JSX
 
 Next, let's create a sample file `react-code-1.tsx` to write some React (JSX) code.
 
