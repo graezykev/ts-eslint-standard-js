@@ -194,7 +194,7 @@ npx eslint eslint.config.js
 
 Yes, there are indeed some errors in the configuration file.
 
-![ts eslint standard js](images/image-8.png)
+![ts eslint standard js](./images/image-8.png)
 
 ### Try `.ts`
 
@@ -215,7 +215,7 @@ npx eslint index.ts
 
 Showing the errors means the configurations also work for TS!
 
-![ts eslint standard js](images/image-9.png)
+![ts eslint standard js](./images/image-9.png)
 
 Besides, you can use `npx eslint .` to check the style of all your files with one command.
 
@@ -230,7 +230,7 @@ npx eslint --fix index.ts
 
 Some issues will be automatically fixed, such as changing `"` to `'`, removing unnecessary semicolons at the end of lines, and so on.
 
-![ts eslint standard js](images/image-03.png)
+![ts eslint standard js](./images/image-03.png)
 
 Certainly, not all issues will be automatically resolved. For instance, ESLint typically won't fix **unused variables**; you'll need to address those manually.
 
@@ -267,11 +267,11 @@ Edit `.vscode/settings.json` to enable the ESLint extension in your editor.
 
 Reloading your VS Code window is required. You'll see errors detected by the ESLint extension showing up in the editor while you are editing the code. These errors will be highlighted with **wavy lines**.
 
-![ts eslint standard js](images/image-00.png)
+![ts eslint standard js](./images/image-00.png)
 
 Hovering over each wavy line will toggle a pop-up displaying the error details.
 
-![ts eslint standard js](images/image-01.png)
+![ts eslint standard js](./images/image-01.png)
 
 ### Auto Format on Save
 
@@ -289,7 +289,7 @@ Modify `.vscode/settings.json` with three additional configurations:
 
 Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically.
 
-![ts eslint standard js](images/image-02.png)
+![ts eslint standard js](./images/image-02.png)
 
 The semicolons will disappear after you press `Command + S` to save your code.
 
@@ -308,7 +308,7 @@ echo '{
 
 VS Code prompts your teammates to install `dbaeumer.vscode-eslint` when the project is opened for the first time.
 
-![ts eslint standard js](images/image-12.png)
+![ts eslint standard js](./images/image-12.png)
 
 ### devcontainer
 
@@ -388,7 +388,7 @@ npm run lint
 
 All ESLint problems in your JavaScript/TypeScript files will be displayed.
 
-![ts eslint standard js](images/image-10.png)
+![ts eslint standard js](./images/image-10.png)
 
 ### Formatting Command
 
@@ -410,7 +410,7 @@ npm run format
 
 Since some problems have been fixed, only those that can't be fixed will be displayed.
 
-![ts eslint standard js](images/image-11.png)
+![ts eslint standard js](./images/image-11.png)
 
 ### Why do I need NPM scripts
 
@@ -475,7 +475,7 @@ const MyComponent = (props) => {
 
 There are some errors visible in the editor.
 
-![ts eslint standard js](images/image.png)
+![ts eslint standard js](./images/image.png)
 
 That's because JSX syntax is not allowed yet in TypeScript configuration.
 
@@ -496,7 +496,7 @@ npx eslint react-code-1.tsx
 
 You'll find 14 problems, indicating that ESLint is enabled for `.tsx` files.
 
-![ts eslint standard js](images/image-1.png)
+![ts eslint standard js](./images/image-1.png)
 
 ### Ask ESLint to Recognize `.jsx`
 
@@ -508,7 +508,7 @@ npx eslint react-code-2.jsx
 
 You may see some problems, but they are not actual code style issues.
 
-![ts eslint standard js](images/image-2.png)
+![ts eslint standard js](./images/image-2.png)
 
 That's because the `.jsx` file extension is not specified in the ESLint configuration. Let's configure it in `eslint.config.js`:
 
@@ -520,7 +520,7 @@ export default [
 
 Lint it again, and you'll get **14 errors**, the same as `react-code-1.tsx`.
 
-![ts eslint standard js](images/image-3.png)
+![ts eslint standard js](./images/image-3.png)
 
 These errors in `react-code-1.tsx` and `react-code-2.jsx` are code style problems, however, they are still not React-specific problems. We need to do more.
 
@@ -545,7 +545,7 @@ export default [
 
 Now, when you run `npx eslint react-code-1.tsx`, you'll find **15 problems**. This is one more issue compared to the previous **14 problems**, because an additional problem related to React, specified in the plugin `eslint-plugin-react`, has been detected.
 
-![ts eslint standard js](images/image-4.png)
+![ts eslint standard js](./images/image-4.png)
 
 ### Self-Customize your Own Rule(s)
 
@@ -568,7 +568,7 @@ export default [
 
 Run `npx eslint react-code-1.tsx`, and you'll notice one additional problem defined by you.
 
-![ts eslint standard js](images/image-5.png)
+![ts eslint standard js](./images/image-5.png)
 
 You can define or modify any rules as much as you like to tailor your team's rules here.
 
@@ -596,7 +596,7 @@ const MyComponent = (props) => {
 
 Now lint it, and you'll find some errors, but **none of them are related to React Hooks**.
 
-![ts eslint standard js](images/image-6.png)
+![ts eslint standard js](./images/image-6.png)
 
 You just need to edit the ESLint configuration with one additional line.
 
@@ -608,11 +608,11 @@ You just need to edit the ESLint configuration with one additional line.
 
 Lint `react-code-1.tsx` again, and you'll get errors related to React Hooks.
 
-![ts eslint standard js](images/image-7.png)
+![ts eslint standard js](./images/image-7.png)
 
 There's one more thing you may have noticed: the warning.
 
-![ts eslint standard js](images/image-001.png)
+![ts eslint standard js](./images/image-001.png)
 
 Add the following configurations to automatically detect the React version and eliminate the warning.
 
