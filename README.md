@@ -17,3 +17,7 @@ npm install
 ```sh
 npm run lint
 ```
+
+## Try It in Codespaces
+
+![alt text](image.png)
