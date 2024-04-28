@@ -502,7 +502,9 @@ First, configure `eslint-plugin-react` in `eslint.config.js` with just a new lin
 export default [
   { files: ['**/*.{js,ts,jsx,tsx}'], languageOptions: { sourceType: 'script' } },
   { languageOptions: { globals: globals.browser } },
-+  ...compat.extends('plugin:react/recommended'),
++ ...compat.extends('plugin:react/recommended'),
+  ...tseslint.configs.recommended,
+  ...compat.extends('love')
 ```
 
 Now, when you run `npx eslint react-code-1.tsx`, you'll find **15 problems**. This is one more issue compared to the previous **14 problems**, because an additional problem related to React, specified in the plugin `eslint-plugin-react`, has been detected.
@@ -564,7 +566,7 @@ You just need to edit the ESLint configuration with one additional line.
 
 ```diff
   ...compat.extends('plugin:react/recommended'),
-+  ...compat.extends('plugin:react-hooks/recommended'),
++ ...compat.extends('plugin:react-hooks/recommended'),
   ...tseslint.configs.recommended,
 ```
 
