@@ -406,7 +406,7 @@ npm install -D @types/react @types/react-dom
 
 ### Let TypeScript to Recognize JSX
 
-Before we proceed, let's disable the editor's auto-save first in `.vscode/settings.json` to better demonstrate how the following linting configurations work.
+Before we proceed, let's disable the editor's auto-save first in `.vscode/settings.json` to better demonstrate how the following linting configurations work. (But **this is only an intermediate step; don't forget to undo the change in the end**.)
 
 ```diff
 -"editor.formatOnSave": true,
