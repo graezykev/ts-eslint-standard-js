@@ -295,7 +295,9 @@ The semicolons will disappear after you press `Command + S` to save your code.
 
 By sharing this `settings.json` in Git or any other version control tools, if your teammates have the extension `dbaeumer.vscode-eslint` installed, the same behavior will occur in their VS Code.
 
-You can share the installation of `dbaeumer.vscode-eslint` via `devcontainer.json`.
+### devcontainer
+
+You can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`, but that's a larger topic, and I won't elaborate on it here, you can just give it a try.
 
 ```sh
 mkdir .devcontainer && \
