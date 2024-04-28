@@ -20,4 +20,4 @@ npm run lint
 
 ## Try It in Codespaces
 
-![alt text](images/image-0.png)
+![ts eslint standard js](images/image-0.png)

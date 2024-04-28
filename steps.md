@@ -308,7 +308,7 @@ echo '{
 
 VS Code prompts your teammates to install `dbaeumer.vscode-eslint` when the project is opened for the first time.
 
-![alt text](images/image-12.png)
+![ts eslint standard js](images/image-12.png)
 
 ### devcontainer
 
