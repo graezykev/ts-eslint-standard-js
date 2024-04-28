@@ -308,9 +308,17 @@ echo '{
 
 VS Code prompts your teammates to install `dbaeumer.vscode-eslint` when the project is opened for the first time.
 
+![alt text](images/image-12.png)
+
 ### devcontainer
 
-If your team is using a **Cloud Development Environment** such as [GitHub Codespaces](https://github.com/codespaces), you can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`, I love this, but it's a larger topic, and I won't elaborate too much on it here, you can just give it a try.
+If your team is using a **Cloud Development Environment** such as [GitHub Codespaces](https://github.com/codespaces), you can even share the installation of `dbaeumer.vscode-eslint` with your teammates, via `devcontainer.json`.
+
+When someone opens the project in VS Code, the specified extension (as well as the specific version) `dbaeumer.vscode-eslint@3.0.5` will be automatically installed within the devcontainer.
+
+The automatic installation only applies to the devcontainer environment.
+
+I love this, but it's a larger topic, and I won't elaborate too much on it here, you can just give it a try.
 
 ```sh
 mkdir .devcontainer && \
