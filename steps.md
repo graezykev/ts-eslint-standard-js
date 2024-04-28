@@ -277,14 +277,23 @@ Hovering over each wavy line will toggle a pop-up displaying the error details.
 
 This VS Code ESLint extension can also automatically fix your code's linting issues. It operates similarly to running `npx eslint` on the file while you're editing it.
 
-Modify `.vscode/settings.json` with three additional configurations:
+Modify `.vscode/settings.json` with some additional configurations:
 
-```diff
-- "eslint.enable": true
-+ "eslint.enable": true,
-+ "eslint.format.enable": true,
-+ "editor.formatOnSave": true,
-+ "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+```json
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  }
 ```
 
 Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically.
@@ -345,12 +354,12 @@ Under the rules of [Standard JS](https://standardjs.com/rules), the use of real 
 
 To collaborate better with your teammates or enforce the rules of our code style more strictly, I recommend configuring the VS Code editor and sharing the configurations to unify this behavior. For example, you can set it to automatically insert 2 spaces after pressing the `Tab` key instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
 
-To achieve this, add the following three configurations to `.vscode/settings.json`:
+To achieve this, add the following 3 configurations to `.vscode/settings.json`:
 
-```diff
-+ "editor.tabSize": 2,
-+ "editor.insertSpaces": true,
-+ "editor.detectIndentation": false
+```json
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false
 ```
 
 From now on, whenever someone opens your project in VS Code, pressing the `Tab` key will insert 2 spaces, and pressing the `Backspace` key will delete 2 spaces.
