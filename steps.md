@@ -73,13 +73,15 @@ If you're not setting up a new TypeScript project, you can skip this part 1.
 Initialize a Git repository if you're starting a new project.
 
 ```sh
+mkdir ts-eslint-standard-js && \
+cd ts-eslint-standard-js && \
 git init && \
 echo 'node_modules' >> .gitignore
 ```
 
 ### Init Project
 
-Initialize your npm package.
+Initialize your NPM package.
 
 ```sh
 npm init -y
@@ -89,6 +91,12 @@ I recommend enabling ES6 modules in your project, indicating that your source co
 
 ```sh
 npm pkg set type="module"
+```
+
+I also recommend upgrading your Node.js version and specifying the minimum version requirements in your project.
+
+```sh
+npm pkg set engines.node=">=18.18.0 <19 || >=20.9.0 <21 || >=21.1.0"
 ```
 
 ### Install TypeScript
