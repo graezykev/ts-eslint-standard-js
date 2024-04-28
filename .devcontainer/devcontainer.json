@@ -1,0 +1,10 @@
+{
+  "name": "ts-eslint-standard-js",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint@3.0.5"
+      ]
+    }
+  }
+}
