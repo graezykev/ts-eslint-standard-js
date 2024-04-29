@@ -656,13 +656,11 @@ Add the following configurations to automatically detect the React version and e
 
 ## Conclusion
 
-Now you have a somewhat robust toolchain for linting and formatting your code.
+Now we have a somewhat comprehensive toolchain for linting and formatting your code.
 
-Your Codes of **TypeScript and JavaScript**, writing features using **React and React Hooks**, will all be ensured through **Checking and Formatting CLI scripts** and **Checking and Formatting editor tools**.
+The **TypeScript and JavaScript** code, including features developed with **React and React Hooks**, will be **validated and formatted** using **CLI scripts and Editor Tools**.
 
-The **TypeScript and JavaScript** code, including features developed with **React and React Hooks**, will be **validated and formatted** using **CLI scripts and editor tools**.
-
-We also provide a method to **customize** the rules for React and React Hooks or to extend them with your own rules.
+We also have a method to **customise** the rules for React and React Hooks or to extend them with your own rules.
 
 Next, you may want to integrate your linting scripts with your Git Hooks or CI/CD workflows. For Git Hooks, I have another post that elaborates on the steps. Check it out if you're interested.
 
