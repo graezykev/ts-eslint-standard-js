@@ -213,7 +213,7 @@ And check its code style:
 npx eslint index.ts
 ```
 
-Showing the errors means the configurations also work for TS!
+Showing the errors indicates that the configurations also work for TypeScript!
 
 ![ts eslint standard js](./images/image-9.png)
 
@@ -344,6 +344,10 @@ echo '{
   }
 }' > .devcontainer/devcontainer.json
 ```
+
+The extension `dbaeumer.vscode-eslint` will be automatically installed if you try it from [here](https://github.com/graezykev/ts-eslint-standard-js).
+
+![ts eslint standard js](./images/image-0.png)
 
 ### Extra Tricks
 
