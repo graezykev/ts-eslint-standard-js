@@ -219,20 +219,21 @@ Showing the errors means the configurations also work for TS!
 
 Besides, you can use `npx eslint .` to check the style of all your files with one command.
 
+![alt text](image.png)
+
 ### Fix Code Style Issues
 
 You can use the `--fix` flag in ESLint to automatically correct some of the illegal syntax and style issues in your code.
 
 ```sh
-npx eslint --fix index.ts
-# npx eslint --fix .
+npx eslint --fix index.ts # npx eslint --fix .
 ```
 
 Some issues will be automatically fixed, such as changing `"` to `'`, removing unnecessary semicolons at the end of lines, and so on.
 
 ![ts eslint standard js](./images/image-03.png)
 
-Certainly, not all issues will be automatically resolved. For instance, ESLint typically won't fix **unused variables**; you'll need to address those manually.
+Certainly, there's still 1 problem left, as not all issues can be automatically resolved. For instance, ESLint typically won't fix **unused variables**; you'll need to address those manually.
 
 ## 3. Editor (VS Code) Integration
 
@@ -296,7 +297,7 @@ Modify `.vscode/settings.json` with some additional configurations:
   }
 ```
 
-Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically.
+Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically, just look like your are running `eslint --fix eslint.config.js`.
 
 ![ts eslint standard js](./images/image-02.png)
 
@@ -553,7 +554,13 @@ export default [
   ...compat.extends('love')
 ```
 
-Now, when you run `npx eslint react-code-1.tsx`, you'll find **15 problems**. This is one more issue compared to the previous **14 problems**, because an additional problem related to React, specified in the plugin `eslint-plugin-react`, has been detected.
+Run command to lint it.
+
+```sh
+npx eslint react-code-1.tsx
+```
+
+You'll find **15 problems**. This is one more issue compared to the previous **14 problems**, because an additional problem related to React, specified in the plugin `eslint-plugin-react`, has been detected.
 
 ![ts eslint standard js](./images/image-4.png)
 
@@ -604,7 +611,13 @@ const MyComponent = (props) => {
 };
 ```
 
-Now lint it, and you'll find some errors, but **none of them are related to React Hooks**.
+Now lint it.
+
+```sh
+npx eslint react-code-1.tsx
+```
+
+And you'll find some errors, but **none of them are related to React Hooks**.
 
 ![ts eslint standard js](./images/image-6.png)
 
