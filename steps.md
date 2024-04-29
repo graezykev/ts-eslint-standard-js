@@ -455,16 +455,9 @@ npm install -D @types/react @types/react-dom
 
 In the next steps, I'm going to create some code, but I don't want them to be auto-fixed by ESLint.
 
-So, before we proceed, let's disable the ESLint VS Code Extension and the editor's auto-save in `.vscode/settings.json` to better demonstrate how the following linting configurations work. (But **this is only an intermediate step; don't forget to undo the change in the end**.)
+So, before we proceed, let's disable the ESLint VS Code Extension to better demonstrate how the following linting configurations work. (But **this is only an intermediate step; don't forget to undo the change in the end**.)
 
-```diff
--  "eslint.enable": true,
--  "eslint.format.enable": true,
--  "editor.formatOnSave": true,
-+  "eslint.enable": false,
-+  "eslint.format.enable": false,
-+  "editor.formatOnSave": false,
-```
+![alt text](./images/image-13.png)
 
 ### Let TypeScript to Recognize JSX
 
