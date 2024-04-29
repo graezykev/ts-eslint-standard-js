@@ -219,7 +219,7 @@ Showing the errors means the configurations also work for TS!
 
 Besides, you can use `npx eslint .` to check the style of all your files with one command.
 
-![alt text](image.png)
+![ts eslint standard js](./images/image-002.png)
 
 ### Fix Code Style Issues
 
@@ -233,7 +233,7 @@ Some issues will be automatically fixed, such as changing `"` to `'`, removing u
 
 ![ts eslint standard js](./images/image-03.png)
 
-Certainly, there's still 1 problem left, as not all issues can be automatically resolved. For instance, ESLint typically won't fix **unused variables**; you'll need to address those manually.
+Certainly, there's still **1 problem left**, as not all issues can be automatically resolved. For instance, ESLint typically won't fix **unused variables**; you'll need to address those manually.
 
 ## 3. Editor (VS Code) Integration
 
