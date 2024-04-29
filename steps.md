@@ -297,9 +297,9 @@ Modify `.vscode/settings.json` with some additional configurations:
   }
 ```
 
-Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically, just look like your are running `eslint --fix eslint.config.js`.
+Now, every time you type some code and press `Command + S` to save them, the problems in the file that can be automatically fixed will be corrected automatically, just looks like your are running `eslint --fix eslint.config.js`.
 
-![ts eslint standard js](./images/image-02.png)
+![ts eslint standard js](./images/lint-fix.gif)
 
 The semicolons will disappear after you press `Command + S` to save your code.
 
