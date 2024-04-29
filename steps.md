@@ -52,7 +52,7 @@ Sorry, I've gone too far. I'm not here to persuade you to use Standard JS. My in
 
 ### GitHub Repo
 
-If you'd prefer to run the demo I've created instead of following the steps individually, check out this [GitHub repository](https://github.com/graezykev/ts-eslint-standard-js/tree/main) for a quick overview and hands-on experience.
+If you'd prefer to run the demo I've created instead of following the steps individually, check out this [GitHub repository](https://github.com/graezykev/ts-eslint-standard-js) for a quick overview and hands-on experience.
 
 ## Key Takeaways
 
