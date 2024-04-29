@@ -14,7 +14,7 @@ You may be torn between those famous code styles, struggling to choose one betwe
 
 What's worse, you and your teammates may be arguing about whether you should use `;` at the end of each line, whether `if() {` should have a space after `if`, whether `function foo () {return true}` is a bad way and should change it to `function foo () { return true }`, and so on.
 
-In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team. Once the rules are set, don't argue about them anymore, as long as the rules are detailed.
+In my personal perspective, it doesn't matter which style you choose, but you need a **unified and strict** style across a team. Once the rules are set, there's no room for argument, as long as the rules are detailed and cover most aspects.
 
 So, self-assertively, I have chosen [JavaScript Standard Style](https://standardjs.com/rules), also known as Standard JS, even though it is not at all standard—the name is somewhat misleading.
 
