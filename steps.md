@@ -1,6 +1,6 @@
 # Configure ESLint in a TypeScript project to adhere to Standard JS
 
-**Integrate [JavaScript Standard Style](https://standardjs.com/rules) in ESLint to lint and format TypeScript, primarily using [`eslint-config-love`](https://github.com/mightyiam/eslint-config-love).**
+**Integrate the [JavaScript Standard Style](https://standardjs.com/rules) rules in ESLint to lint and format TypeScript, primarily using [`eslint-config-love`](https://github.com/mightyiam/eslint-config-love).**
 
 **Enhance the setup with VS Code tips for automatic formatting.**
 
@@ -109,7 +109,7 @@ npm install -D typescript
 
 ### Init TypeScript
 
-Use the following command to initialize a new TypeScript project.
+Use the following command to initialise a new TypeScript project.
 
 ```sh
 npx tsc --init
@@ -303,7 +303,7 @@ Now, every time you type some code and press `Command + S` to save them, the pro
 
 The semicolons will disappear after you press `Command + S` to save your code.
 
-By sharing this `settings.json` in Git or any other version control tools, if your teammates have the extension `dbaeumer.vscode-eslint` installed, the same behavior will occur in their VS Code.
+By sharing this `settings.json` in Git or any other version control tools, if your teammates have the extension `dbaeumer.vscode-eslint` installed, the same behaviour will occur in their VS Code.
 
 ### Recommend Installing the Extension
 
@@ -351,13 +351,13 @@ The extension `dbaeumer.vscode-eslint` will be automatically installed if you tr
 
 ### Extra Tricks
 
-Different developers have their own default editor behaviors.
+Different developers have their own default editor behaviours.
 
 For instance, in your VS Code, pressing the `Tab` key may produce a tab with a width of 4 spaces, while for your teammates, it may produce 2 spaces or 4 spaces, depending on their default settings.
 
 Under the rules of [Standard JS](https://standardjs.com/rules), the use of real **tabs** for code indentation is not allowed; instead, you have to use 2 spaces.
 
-To collaborate better with your teammates or enforce the rules of our code style more strictly, I recommend configuring the VS Code editor and sharing the configurations to unify this behavior. For example, you can set it to automatically insert 2 spaces after pressing the `Tab` key instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
+To collaborate better with your teammates or enforce the rules of our code style more strictly, I recommend configuring the VS Code editor and sharing the configurations to unify this behaviour. For example, you can set it to automatically insert 2 spaces after pressing the `Tab` key instead of inserting a real **tab**, following the rule defined by [Standard JS](https://standardjs.com/rules).
 
 To achieve this, add the following 3 configurations to `.vscode/settings.json`:
 
