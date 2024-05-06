@@ -381,7 +381,7 @@ From now on, whenever someone opens your project in VS Code, pressing the `Tab` 
 
 ## 4. Automate Linting and Formatting
 
-In this section, we'll integrate checking and formatting commands into your project's NPM scripts. This enables you to execute batched tasks or run them in your **CI workflows** and **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)**.
+In this section, we'll integrate checking and formatting commands into your project's NPM scripts. This enables you to execute batched tasks or run them in your **CI workflows** and **[Git Hooks](https://github.com/graezykev/normalise-your-git-commit-and-push)**.
 
 ### Linting Command
 
@@ -448,7 +448,7 @@ By strictly defining the specific version (or version ranges) of ESLint in your 
 
 What's more, your `lint` script might include additional flags or options specific to your project. NPM scripts, with more semantic indicators, allow you to abstract away those complex commands or tool configurations.
 
-I have another post on [How to Normalize Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md), leveraging the NPM scripts. Check it out for more ideas that can enhance your workflow.
+I have another post on [Streamline Your Workflow: A Guide to Normalising Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push), leveraging the NPM scripts. Check it out for more ideas that can enhance your workflow.
 
 ## 5. Linting React & React Hooks
 
@@ -674,6 +674,6 @@ We also have a method to **customise** the rules for React and React Hooks or to
 
 Next, you may want to integrate your linting scripts with your Git Hooks or CI/CD workflows. For Git Hooks, I have another post that elaborates on the steps. Check it out if you're interested.
 
-[How to Normalise Your Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push/blob/main/steps.md)
+[Streamline Your Workflow: A Guide to Normalising Git Commit and Push Processes](https://github.com/graezykev/normalise-your-git-commit-and-push)
 
 **Last but not least, any suggestions, corrections, questions, or disagreements will be greatly appreciated.**
