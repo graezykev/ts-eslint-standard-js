@@ -1,6 +1,6 @@
 # Mastering Code Quality: Setting Up ESLint with Standard JS in TypeScript Projects
 
-Learn how to enhance your TypeScript project by integrating [JavaScript Standard Style](https://standardjs.com/rules) rules using [`eslint-config-love`](https://github.com/mightyiam/eslint-config-love) in ESLint. This guide will also provide you with essential tips for setting up automatic formatting in Visual Studio Code, ensuring your code remains clean and consistent. Furthermore, we'll explore the inclusion of ESLint plugins specifically designed for React and React Hooks to optimise your development workflow.
+Learn how to enhance your TypeScript project by integrating [JavaScript Standard Style](https://standardjs.com/rules) rules using [`eslint-config-love`](https://github.com/mightyiam/eslint-config-love) in ESLint. This guide will also provide you with essential tips for setting up **automatic formatting** in Visual Studio Code, ensuring your code remains clean and consistent. Furthermore, we'll explore the inclusion of ESLint plugins specifically designed for **React** and React Hooks to optimise your development workflow.
 
 ## Try It Out
 
